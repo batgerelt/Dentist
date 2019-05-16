@@ -1,6 +1,10 @@
 package application;
 
+import java.net.URL;
+import java.util.ResourceBundle;
+
 import javafx.event.ActionEvent;
+import javafx.fxml.Initializable;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
@@ -11,7 +15,7 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
-public class MainWindowController {
+public class MainWindowController implements Initializable {
 
     @FXML
     private BorderPane rootPane;
@@ -108,7 +112,15 @@ public class MainWindowController {
 
     @FXML
 	void handleClickCloseBtn(ActionEvent event) {
-		Stage stage = (Stage) closeBtn.getScene().getWindow();
-		stage.close();
+    	Stage stage = (Stage) closeBtn.getScene().getWindow();
+		stage.close();		
+	}
+    
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		// TODO Auto-generated method stub
+		
+		
 	}
 }
