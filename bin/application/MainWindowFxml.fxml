@@ -682,7 +682,7 @@
                   <Image url="@../assets/logo.png" />
                </image>
             </ImageView>
-            <Button fx:id="closeBtn" layoutX="1110.0" layoutY="12.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="56.0" text="Гарах" />
+            <Button fx:id="closeBtn" layoutX="1110.0" layoutY="12.0" mnemonicParsing="false" onAction="#handleClickCloseBtn" prefHeight="38.0" prefWidth="56.0" text="Гарах" />
          </children>
       </Pane>
    </children>
