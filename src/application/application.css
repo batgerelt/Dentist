@@ -1,0 +1,11 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+.jfx-tab-pane .control-buttons-tab{
+    -fx-background-color: WHITE;
+}
+.jfx-tab-pane .control-buttons-tab .tab-down-button{
+    -fx-background-color: GREEN;
+}
+.jfx-tab-pane .control-buttons-tab .jfx-rippler{
+    -jfx-rippler-fill: Yellow;
+}
