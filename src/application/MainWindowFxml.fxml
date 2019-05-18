@@ -21,6 +21,8 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.effect.Blend?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -53,7 +55,10 @@
                     </columns>
                   </TableView>
                   <TextField layoutX="19.0" layoutY="14.0" prefHeight="31.0" prefWidth="204.0" promptText="Регистер дугаараар хайх..." />
-                  <Button layoutX="229.0" layoutY="14.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0" text="Хайх" />
+                  <Button layoutX="229.0" layoutY="14.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="75.0" text="Хайх">
+                                 <tooltip>
+                                    <Tooltip text="Empty Tooltip" />
+                                 </tooltip></Button>
                   <Button layoutX="470.0" layoutY="14.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="118.0" text="Бүртгэх" />
                   <Button layoutX="342.0" layoutY="14.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="118.0" text="Дэлгэрэнгүй" />
                </children>
@@ -656,23 +661,6 @@
                   </AnchorPane>
                </content>
             </Tab>
-            <Tab text="Төлбөр">
-               <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="682.0" prefWidth="1173.0" style="-fx-background-color: #F0F0F0F0;">
-                     <children>
-                        <BorderPane layoutX="-1.0" layoutY="4.0" prefHeight="684.0" prefWidth="1173.0" style="-fx-background-color: white;" stylesheets="@application.css">
-                           <center>
-                              <Label text="Энэ хэсэгт Эмчиdasdлгээ" BorderPane.alignment="CENTER" />
-                           </center>
-                           <styleClass>
-                              <String fx:value="jfx-rippler" />
-                              <String fx:value="jfx-tab-pane" />
-                              <String fx:value="tab-down-button" />
-                           </styleClass>
-                        </BorderPane>
-                     </children></AnchorPane>
-               </content>
-            </Tab>
             <Tab text="Ажилтан">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="682.0" prefWidth="1173.0" style="-fx-background-color: #F0F0F0F0;">
@@ -691,17 +679,41 @@
                   </AnchorPane>
                </content>
             </Tab>
+            <Tab text="Төлбөр">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="682.0" prefWidth="1173.0" style="-fx-background-color: #F0F0F0F0;">
+                     <children>
+                        <BorderPane layoutX="-1.0" layoutY="4.0" prefHeight="684.0" prefWidth="1173.0" style="-fx-background-color: white;" stylesheets="@application.css">
+                           <center>
+                              <Label text="Энэ хэсэгт Эмчиdasdлгээ" BorderPane.alignment="CENTER" />
+                           </center>
+                           <styleClass>
+                              <String fx:value="jfx-rippler" />
+                              <String fx:value="jfx-tab-pane" />
+                              <String fx:value="tab-down-button" />
+                           </styleClass>
+                        </BorderPane>
+                     </children></AnchorPane>
+               </content>
+            </Tab>
         </tabs>
       </TabPane>
-      <Pane layoutX="-3.0" prefHeight="61.0" prefWidth="1180.0" style="-fx-background-color: #FFFFFF;">
+      <Pane layoutX="-3.0" onDragDetected="#handleClickCloseBtn" prefHeight="61.0" prefWidth="1180.0" style="-fx-background-color: #FFFFFF;" AnchorPane.topAnchor="0.0">
          <children>
             <ImageView fitHeight="72.0" fitWidth="56.0" layoutX="14.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../assets/logo.png" />
                </image>
             </ImageView>
-            <Button fx:id="closeBtn" layoutX="1110.0" layoutY="12.0" mnemonicParsing="false" onAction="#handleClickCloseBtn" prefHeight="38.0" prefWidth="56.0" text="Гарах" />
+            <ImageView fx:id="logout" fitHeight="38.0" fitWidth="41.0" focusTraversable="true" layoutX="1128.0" layoutY="12.0" onMouseClicked="#handleLogout" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/logouting.png" />
+               </image>
+            </ImageView>
          </children>
+         <effect>
+            <Blend />
+         </effect>
       </Pane>
    </children>
 </AnchorPane>
