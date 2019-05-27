@@ -12,11 +12,11 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			Parent root = FXMLLoader.load(getClass().getResource("MainWindowFxml.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("../login/login.fxml"));
 			
 			primaryStage.getIcons().add(new Image("file:icon.png"));
 			primaryStage.setTitle("Dentist Medical");
-			primaryStage.setScene(new Scene(root, 1160, 850));
+			primaryStage.setScene(new Scene(root, 680, 450));
 			primaryStage.setResizable(false);
 			primaryStage.show();
 		} catch(Exception e) {

@@ -1,0 +1,19 @@
+.root{
+    -fx-background-color: #DDDDDD;
+}
+
+.cardPane{
+    -fx-background-color: white;
+    -fx-background-radius: 8px;
+}
+
+.topPane{
+    -fx-background-color: #3196DE;
+}
+.button{
+    -fx-background-color: #3196DE;
+}
+
+.text-input:disabled {
+-fx-opacity: 1.0;
+}
