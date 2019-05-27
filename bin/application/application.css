@@ -1,15 +1,29 @@
 /* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
 
 .root {
-   /** -fx-base: #e6f7ff; */
+   /**-fx-base: blue; */
+   -fx-background-color: 
+        #3c7fb1,
+        linear-gradient(#fafdfe, #e8f5fc),
+        linear-gradient(#eaf6fd 0%, #d9f0fc 49%, #bee6fd 50%, #a7d9f5 100%);
+    -fx-background-insets: 0,1,2;
+    -fx-background-radius: 3,2,1;
+    -fx-padding: 3 30 3 30;
+    -fx-text-fill: black;
+    -fx-font-size: 14px;
 }
 
  .tab{
-    -fx-background-radius: 0;
-    -fx-background-color:  derive(-fx-base, 0%);
-    -fx-background-insets: 0.3; 
-    -fx-text-fill: red;
-    -fx-focus-color: Black;
+ 	-fx-background-color: 
+        #3c7fb1,
+        linear-gradient(#fafdfe, #e8f5fc),
+        linear-gradient(#eaf6fd 0%, #d9f0fc 49%, #bee6fd 50%, #a7d9f5 100%);
+    -fx-background-insets: 0,1,2;
+    -fx-background-radius: 3,2,1;
+    -fx-padding: 3 30 3 30;
+    -fx-text-fill: black;
+    -fx-font-size: 14px;
+    
 }
 
 .tab:hover{
@@ -17,7 +31,7 @@
 }
 
 .tab:selected{
-    -fx-background-color:  derive(#003a8c, 60%);
+    -fx-background-color: #3196DE;
     -fx-border-color: none;
     -fx-text-fill: Black;
     -fx-color:Black;

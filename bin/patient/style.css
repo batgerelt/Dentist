@@ -1,0 +1,9 @@
+.text-input:disabled {
+    -fx-opacity: 1.0;
+}
+.choice-box:disabled, .date-picker{
+    -fx-opacity: 1;
+}
+.text-area:disabled{
+    fx-opacity: 1;
+}

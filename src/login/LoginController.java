@@ -60,19 +60,6 @@ public class LoginController {
         primaryStage = stage;
     }
 
-    @FXML
-    void CloseWindow(ActionEvent event) {
-        Platform.exit();
-        System.exit(0);
-    }
-
-    @FXML
-    void MinimizeWindow(ActionEvent event) {
-        Node source = (Node) event.getSource();
-        Scene scene = source.getScene();
-        primaryStage.setIconified(true);
-    }
-
     User loggedInUser = new User();
 
     @FXML
