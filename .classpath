@@ -7,5 +7,13 @@
 	<classpathentry kind="lib" path="src/assets/library/jfoenix-8.0.8.jar"/>
 	<classpathentry kind="lib" path="src/assets/library/jfoenix-9.0.8.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Batgerelt/Desktop/diplom/mysql-connector-java-5.1.45.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Batgerelt/Desktop/diplom/Jarfiles/Jarfiles/commons-beanutils-1.9.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Batgerelt/Desktop/diplom/Jarfiles/Jarfiles/commons-collections-3.2.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Batgerelt/Desktop/diplom/Jarfiles/Jarfiles/commons-digester-2.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Batgerelt/Desktop/diplom/Jarfiles/Jarfiles/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Batgerelt/Desktop/diplom/Jarfiles/Jarfiles/groovy-all-2.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Batgerelt/Desktop/diplom/Jarfiles/Jarfiles/itextpdf-5.5.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Batgerelt/Desktop/diplom/Jarfiles/Jarfiles/itext-pdfa-5.5.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Batgerelt/Desktop/diplom/Jarfiles/Jarfiles/jasperreports-6.0.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
