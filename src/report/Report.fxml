@@ -6,49 +6,57 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="report.ReportController">
-   <top>
-      <HBox prefHeight="314.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+   <center>
+      <GridPane prefHeight="586.0" prefWidth="1261.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="594.0" minWidth="10.0" prefWidth="144.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="594.0" minWidth="10.0" prefWidth="125.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="594.0" minWidth="0.0" prefWidth="54.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="1120.0" minWidth="10.0" prefWidth="82.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1120.0" minWidth="10.0" prefWidth="120.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1120.0" minWidth="10.0" prefWidth="58.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1120.0" minWidth="10.0" prefWidth="89.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1120.0" minWidth="10.0" prefWidth="136.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1120.0" minWidth="10.0" prefWidth="123.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1120.0" minWidth="10.0" prefWidth="121.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1120.0" minWidth="10.0" prefWidth="148.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="294.0" minHeight="0.0" prefHeight="86.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="501.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="765.0" minHeight="10.0" prefHeight="765.0" vgrow="SOMETIMES" />
+        </rowConstraints>
          <children>
-            <Label text="Start Date">
-               <HBox.margin>
-                  <Insets top="80.0" />
-               </HBox.margin>
+            <Label text="Эхлэх огноо:">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
             </Label>
-            <DatePicker fx:id="start_date" prefHeight="25.0" prefWidth="102.0">
-               <HBox.margin>
-                  <Insets top="100.0" />
-               </HBox.margin></DatePicker>
-            <Label text="End Date">
-               <HBox.margin>
-                  <Insets top="80.0" />
-               </HBox.margin>
-            </Label>
-            <DatePicker fx:id="end_date" prefHeight="25.0" prefWidth="78.0">
-               <HBox.margin>
-                  <Insets top="100.0" />
-               </HBox.margin></DatePicker>
-            <Label text="Doctor Name">
-               <HBox.margin>
-                  <Insets top="80.0" />
-               </HBox.margin>
-            </Label>
-            <TextField fx:id="Doc_id" prefHeight="25.0" prefWidth="54.0">
-               <HBox.margin>
-                  <Insets top="100.0" />
-               </HBox.margin>
-            </TextField>
-            <Button mnemonicParsing="false" onMouseClicked="#ReceptionClk" text="Reception">
-               <HBox.margin>
-                  <Insets left="20.0" top="100.0" />
-               </HBox.margin></Button>
-            <Button mnemonicParsing="false" onMouseClicked="#doctorClk" text="Doctor">
-               <HBox.margin>
-                  <Insets left="20.0" top="100.0" />
-               </HBox.margin></Button>
+            <DatePicker fx:id="start_date" prefHeight="25.0" prefWidth="161.0" GridPane.columnIndex="1" />
+            <Label prefHeight="17.0" prefWidth="82.0" text="Дуусах огноо:" GridPane.columnIndex="3" />
+            <DatePicker fx:id="end_date" prefHeight="25.0" prefWidth="185.0" GridPane.columnIndex="4" />
+            <Label text="Эмчийн нэр:" GridPane.columnIndex="6" />
+            <TextField fx:id="Doc_id" prefHeight="25.0" prefWidth="171.0" GridPane.columnIndex="7" />
+            <Button mnemonicParsing="false" onMouseClicked="#doctorClk" prefHeight="25.0" prefWidth="98.0" text="Doctor" GridPane.columnIndex="8">
+               <GridPane.margin>
+                  <Insets left="5.0" right="5.0" />
+               </GridPane.margin></Button>
+            <Button mnemonicParsing="false" onMouseClicked="#ReceptionClk" prefHeight="25.0" prefWidth="137.0" text="Reception" GridPane.columnIndex="9">
+               <padding>
+                  <Insets left="5.0" right="5.0" />
+               </padding>
+               <GridPane.margin>
+                  <Insets left="5.0" right="5.0" />
+               </GridPane.margin></Button>
          </children>
-      </HBox>
-   </top>
+      </GridPane>
+   </center>
 </BorderPane>

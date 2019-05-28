@@ -4,19 +4,15 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import connectivity.ConnectionClass;
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-
-import javax.jws.soap.SOAPBinding;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -82,12 +78,15 @@ public class LoginController {
                     try {
                         loggedInUser.getUserByEmail(username.getText());
 
+//                        FXMLLoader view = new FXMLLoader(getClass().getResource("../patient/patient_view.fxml"));
                         FXMLLoader view = new FXMLLoader(getClass().getResource("../application/MainWindowFxml.fxml"));
+
 
                         Parent patient = view.load();
 
-                        //patientController.setLoggedInUser(loggedInUser);
-                        //view.setController(patientController);
+//                        PatientController patientController = view.getController();
+//                        patientController.setLoggedInUser(loggedInUser);
+//
                         Scene scene = new Scene(patient);
                         Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 //                        appStage.initStyle(StageStyle.DECORATED);

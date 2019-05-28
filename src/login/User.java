@@ -20,8 +20,8 @@ public class User {
     private String register_no; //required
     private int phonenumber; //required
 
-    User(String Password, int position, String fname,String lname,String registerno,
-         LocalDate birthdate,char gender,String Email,int pnumber,String address){
+    public User(String Password, int position, String fname, String lname, String registerno,
+                LocalDate birthdate, char gender, String Email, int pnumber, String address){
 
         this.fname = fname;
         this.lname= lname;
@@ -36,8 +36,8 @@ public class User {
 
     }
 
-    User(String Password, int position, String fname,String lname,String registerno,
-         LocalDate birthdate,char gender,String Email,int pnumber,String address, int id){
+    public User(String Password, int position, String fname, String lname, String registerno,
+                LocalDate birthdate, char gender, String Email, int pnumber, String address, int id){
 
         this.fname = fname;
         this.lname = lname;
@@ -53,7 +53,7 @@ public class User {
 
     }
 
-    User(){
+    public User(){
 
     }
     public int getId() {
@@ -144,13 +144,13 @@ public class User {
         this.phonenumber = phonenumber;
     }
 
-    private void insertUser() throws SQLException {
+    public void insertUser() throws SQLException {
         ConnectionClass connectionClass = new ConnectionClass();
         Connection connection = connectionClass.getConnection();
 
-        String sql = "INSERT INTO users(lname,fname,dob,position,email,password,address,phonenumber,gender) " +
-                    "VALUES ('"+this.lname+"','"+this.fname+"','"+this.dateOfBirth+"','"+this.position+
-                    "','"+this.email+"','"+this.password+"','"+this.address+"','"+this.phonenumber+"','"+this.gender+"')";
+        String sql = "INSERT INTO user(register_no,lname,fname,dob,position,email,address,phonenumber,gender) " +
+                    "VALUES ('"+this.getRegister_no()+"','" +this.getLname()+"','"+this.fname+"','"+this.dateOfBirth+"','"+this.position+
+                    "','"+this.email+"','"+this.address+"','"+this.phonenumber+"','"+this.gender+"')";
         PreparedStatement statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
         statement.executeUpdate();
         ResultSet generatedKeys = statement.getGeneratedKeys();
@@ -159,13 +159,13 @@ public class User {
         }
     }
 
-    private void updateUser() throws SQLException {
+    public void updateUser() throws SQLException {
         ConnectionClass connectionClass = new ConnectionClass();
         Connection connection = connectionClass.getConnection();
 
-        String sql = "Update user set surname='"+this.lname+"',name='"+this.fname+"',dob='"+this.dateOfBirth+"',position = '"+this.position+
-                "',email='"+this.email+"',password='"+this.password+"',address='"+this.address+"',phonenumber'"+this.phonenumber+
-                "',gender'"+this.gender+"')";
+        String sql = "Update user set lname='"+this.lname+"',fname='"+this.fname+"',dob='"+this.dateOfBirth+"',position = '"+this.position+
+                "',email='"+this.email+"',address='"+this.address+"',phonenumber='"+this.phonenumber+
+                "',gender='"+this.gender+"' where id="+this.getId();
         PreparedStatement preparedStmt = connection.prepareStatement(sql);
         preparedStmt.executeUpdate();
     }
@@ -189,6 +189,25 @@ public class User {
             this.setGender(resultSet.getString("gender").charAt(0));
             this.setRegister_no(resultSet.getString("register_no"));
         }
+    }
+
+    public void deleteUser() throws SQLException {
+        ConnectionClass connectionClass = new ConnectionClass();
+        Connection connection = connectionClass.getConnection();
+
+        String qry = "DELETE FROM user WHERE id =" + this.getId();
+        PreparedStatement preparedStmt = connection.prepareStatement(qry);
+        preparedStmt.execute();
+        connection.close();
+    }
+
+    public void updatePassword() throws SQLException {
+        ConnectionClass connectionClass = new ConnectionClass();
+        Connection connection = connectionClass.getConnection();
+
+        String sql = "Update user set password='"+this.getPassword()+"'";
+        PreparedStatement preparedStmt = connection.prepareStatement(sql);
+        preparedStmt.executeUpdate();
     }
 }
 
