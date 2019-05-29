@@ -1,4 +1,5 @@
 eclipse.preferences.version=1
+encoding//src/access/AccessController.java=UTF-8
 encoding//src/application/MainWindowController.java=UTF-8
 encoding//src/connectivity/ConnectionClass.java=UTF-8
 encoding//src/login/LoginController.java=UTF-8

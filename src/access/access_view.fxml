@@ -1,55 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.collections.*?>
-<?import com.jfoenix.controls.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.control.ChoiceBox.*?>
-<?import javafx.scene.control.DatePicker.*?>
-<?import com.jfoenix.controls.*?>
+<?import java.lang.String?>
 <?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1200.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="patient.PatientController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1200.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="access.AccessController">
    <children>
       <SplitPane dividerPositions="0.501669449081803" layoutX="-2.0" layoutY="2.0" prefHeight="900.0" prefWidth="1200.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="898.0" prefWidth="470.0">
                <children>
-                  <TableView fx:id="PatientTable" layoutX="10.0" layoutY="56.0" prefHeight="805.0" prefWidth="578.0">
+                  <TableView fx:id="UserTable" layoutX="10.0" layoutY="56.0" prefHeight="424.0" prefWidth="578.0">
                     <columns>
-                      <TableColumn fx:id="patientListLname" prefWidth="99.0" text="Овог" />
-                        <TableColumn fx:id="patientListFname" minWidth="4.0" prefWidth="151.0" text="Нэр" />
-                        <TableColumn fx:id="patientListRegister" minWidth="4.0" prefWidth="187.0" text="Регистер" />
-                        <TableColumn fx:id="patientListDOB" minWidth="4.0" prefWidth="140.0" text="Төрсөн огноо" />
+                      <TableColumn fx:id="userListLname" prefWidth="99.0" text="Овог" />
+                        <TableColumn fx:id="userListFname" minWidth="4.0" prefWidth="151.0" text="Нэр" />
+                        <TableColumn fx:id="userListRegister" minWidth="4.0" prefWidth="187.0" text="Регистер" />
+                        <TableColumn fx:id="userListPosition" minWidth="4.0" prefWidth="140.0" text="Утасны дугаар" />
                     </columns>
                   </TableView>
-                  <TextField fx:id="patientSearchField" layoutX="19.0" layoutY="14.0" onAction="#searchPatient" prefHeight="31.0" prefWidth="204.0" />
-                  <Button fx:id="patientSearchBtn" layoutX="229.0" layoutY="14.0" mnemonicParsing="false" onAction="#searchPatient" prefHeight="31.0" prefWidth="75.0" text="Хайх" />
-                  <Button fx:id="patientViewBtn" layoutX="342.0" layoutY="14.0" mnemonicParsing="false" onAction="#viewPatient" prefHeight="31.0" prefWidth="118.0" text="Дэлгэрэнгүй" />
-                  <Button fx:id="patientCreateBtn" layoutX="470.0" layoutY="14.0" mnemonicParsing="false" onAction="#createPatient" prefHeight="31.0" prefWidth="118.0" text="+ Үүсгэх" />
+                  <TextField fx:id="userSearchField" layoutX="19.0" layoutY="14.0" onAction="#searchUser" prefHeight="31.0" prefWidth="204.0" />
+                  <Button fx:id="userSearchBtn" layoutX="229.0" layoutY="14.0" mnemonicParsing="false" onAction="#searchUser" prefHeight="31.0" prefWidth="75.0" text="Хайх" />
+                  <Button fx:id="userViewBtn" layoutX="342.0" layoutY="14.0" mnemonicParsing="false" onAction="#viewUser" prefHeight="31.0" prefWidth="118.0" text="Дэлгэрэнгүй" />
+                  <Button fx:id="userCreateBtn" layoutX="470.0" layoutY="14.0" mnemonicParsing="false" onAction="#createUser" prefHeight="31.0" prefWidth="118.0" text="Бүртгэх" />
+                  <TableView fx:id="PosTable" layoutX="15.0" layoutY="524.0" prefHeight="231.0" prefWidth="578.0">
+                     <columns>
+                        <TableColumn fx:id="PosListName" prefWidth="577.0" text="Нэр" />
+                     </columns>
+                  </TableView>
+                  <Text layoutX="19.0" layoutY="508.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Албан тушаал" />
+                  <Button fx:id="posViewBtn" layoutX="135.0" layoutY="486.0" mnemonicParsing="false" onAction="#viewPos" prefHeight="31.0" prefWidth="240.0" text="Албан тушаалын дэлгэрэнгүй" />
+                  <Button fx:id="posCreateBtn" layoutX="393.0" layoutY="486.0" mnemonicParsing="false" onAction="#createPos" prefHeight="31.0" prefWidth="187.0" text="Албан тушаал үүсгэх" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: white;">
                <children>
-                  <Pane layoutX="14.0" layoutY="14.0" prefHeight="393.0" prefWidth="570.0" style="-fx-background-color: F2F2F2;">
+                  <Pane layoutX="12.0" layoutY="14.0" prefHeight="464.0" prefWidth="570.0" style="-fx-background-color: F2F2F2;">
                      <children>
-                        <TextField fx:id="patientEmail" layoutX="171.0" layoutY="348.0" prefHeight="31.0" prefWidth="289.0" />
-                        <Button fx:id="patientEditBtn" layoutX="498.0" layoutY="14.0" mnemonicParsing="false" onAction="#editPatient" text="Засах" />
-                        <Label layoutX="16.0" layoutY="353.0" text="Имэйл хаяг:" />
-                        <Label layoutX="14.0" layoutY="311.0" text="Утасны дугаар:" />
-                        <Label layoutX="14.0" layoutY="269.0" text="Хаяг:" />
-                        <Label layoutX="16.0" layoutY="226.0" text="Төрсөн он сар өдөр:" />
-                        <Label layoutX="14.0" layoutY="145.0" text="Нэр:" />
-                        <Label layoutX="14.0" layoutY="104.0" text="Овог:" />
-                        <Label layoutX="14.0" layoutY="186.0" text="Хүйс:" />
+                        <Button fx:id="userBackBtn" layoutX="15.0" layoutY="14.0" mnemonicParsing="false" onAction="#backUser" text="Буцах" />
+                        <Button fx:id="userDeleteBtn" layoutX="212.0" layoutY="14.0" mnemonicParsing="false" onAction="#deleteUser" prefHeight="31.0" prefWidth="101.0" text="Устгах" />
+                        <Button fx:id="userChangePwdBtn" layoutX="345.0" layoutY="14.0" mnemonicParsing="false" onAction="#changeUserPwd" text="Нууц үг солих" />
+                        <Button fx:id="userEditBtn" layoutX="486.0" layoutY="14.0" mnemonicParsing="false" onAction="#editUser" text="Засах" />
                         <Label layoutX="15.0" layoutY="60.0" text="Регистер" />
-                        <TextField fx:id="patientRegisterNo" layoutX="169.0" layoutY="55.0" prefHeight="31.0" prefWidth="289.0" />
-                        <TextField fx:id="patientSurname" layoutX="168.0" layoutY="99.0" prefHeight="31.0" prefWidth="289.0" />
-                        <TextField fx:id="patientName" layoutX="169.0" layoutY="140.0" prefHeight="31.0" prefWidth="289.0" />
-                        <ChoiceBox fx:id="patientGender" layoutX="169.0" layoutY="181.0" prefHeight="21.0" prefWidth="289.0" style="-fx-opacity: 1;">
+                        <TextField fx:id="userRegisterNo" layoutX="169.0" layoutY="55.0" prefHeight="31.0" prefWidth="289.0" />
+                        <Label layoutX="14.0" layoutY="104.0" text="Овог:" />
+                        <TextField fx:id="userSurname" layoutX="168.0" layoutY="99.0" prefHeight="31.0" prefWidth="289.0" />
+                        <Label layoutX="14.0" layoutY="145.0" text="Нэр:" />
+                        <TextField fx:id="userName" layoutX="169.0" layoutY="140.0" prefHeight="31.0" prefWidth="289.0" />
+                        <Label layoutX="14.0" layoutY="186.0" text="Хүйс:" />
+                        <ChoiceBox fx:id="userGender" layoutX="169.0" layoutY="181.0" prefHeight="21.0" prefWidth="289.0" style="-fx-opacity: 1;">
                             <items>
                                 <FXCollections fx:factory="observableArrayList">
                                     <String fx:value="Эр" />
@@ -57,28 +66,37 @@
                                 </FXCollections>
                             </items>
                         </ChoiceBox>
-                        <DatePicker fx:id="patientDob" layoutX="171.0" layoutY="221.0" prefHeight="31.0" prefWidth="289.0" />
-                        <TextField fx:id="patientAddress" layoutX="170.0" layoutY="264.0" prefHeight="31.0" prefWidth="289.0" />
-                        <TextField fx:id="patientPhone" layoutX="170.0" layoutY="306.0" prefHeight="31.0" prefWidth="289.0" />
-                        <Button fx:id="patientBackBtn" layoutX="15.0" layoutY="14.0" mnemonicParsing="false" onAction="#backPatient" text="&lt; Буцах" />
+                        <Label layoutX="16.0" layoutY="226.0" text="Төрсөн он сар өдөр:" />
+                        <DatePicker fx:id="userDob" layoutX="171.0" layoutY="221.0" prefHeight="31.0" prefWidth="289.0" />
+                        <Label layoutX="14.0" layoutY="269.0" text="Хаяг:" />
+                        <TextField fx:id="userAddress" layoutX="170.0" layoutY="264.0" prefHeight="31.0" prefWidth="289.0" />
+                        <Label layoutX="14.0" layoutY="311.0" text="Утасны дугаар:" />
+                        <TextField fx:id="userPhone" layoutX="170.0" layoutY="306.0" prefHeight="31.0" prefWidth="289.0" />
+                        <Label layoutX="16.0" layoutY="353.0" text="Имэйл хаяг:" />
+                        <TextField fx:id="userEmail" layoutX="171.0" layoutY="348.0" prefHeight="31.0" prefWidth="289.0" />
+                        <Label layoutX="16.0" layoutY="397.0" text="Албан тушаал" />
+                        <ChoiceBox fx:id="userPosition" layoutX="171.0" layoutY="393.0" onMouseClicked="#computePos" prefHeight="21.0" prefWidth="289.0" style="-fx-opacity: 1;" />
+                        <Button fx:id="userSaveBtn" layoutX="474.0" layoutY="408.0" mnemonicParsing="false" onAction="#userSave" text="Хадгалах" />
                      </children>
                   </Pane>
-                  <Pane layoutX="12.0" layoutY="419.0" prefHeight="473.0" prefWidth="570.0">
+                  <Pane layoutX="12.0" layoutY="485.0" prefHeight="407.0" prefWidth="570.0">
                      <children>
-                        <TabPane layoutX="1.0" layoutY="1.0" prefHeight="422.0" prefWidth="570.0" tabClosingPolicy="UNAVAILABLE">
-                          <tabs>
-                            <Tab text="Тэмдэглэл">
-                              <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                       <children>
-                                          <TextArea fx:id="patientComment" layoutX="14.0" layoutY="14.0" prefHeight="355.0" prefWidth="547.0" style="-fx-opacity: 1;" />
-                                       </children>
-                                    </AnchorPane>
-                              </content>
-                            </Tab>
-                          </tabs>
-                        </TabPane>
-                        <Button fx:id="patientSaveBtn" layoutX="479.0" layoutY="435.0" mnemonicParsing="false" onAction="#savePatient" text="Хадгалах" />
+                        <Pane layoutY="4.0" prefHeight="246.0" prefWidth="570.0" style="-fx-background-color: F2F2F2;">
+                           <children>
+                              <Button fx:id="posEditBtn" layoutX="485.0" layoutY="14.0" mnemonicParsing="false" onAction="#editPosition" text="Засах" />
+                              <Label layoutX="17.0" layoutY="74.0" text="Нэр" />
+                              <TextField fx:id="PosName" layoutX="173.0" layoutY="69.0" prefHeight="31.0" prefWidth="289.0" />
+                              <Button fx:id="posBackBtn" layoutX="17.0" layoutY="14.0" mnemonicParsing="false" onAction="#backPosition" text="Буцах" />
+                              <Button fx:id="posSaveBtn" layoutX="485.0" layoutY="207.0" mnemonicParsing="false" onAction="#PositionSave" text="Хадгалах" />
+                              <CheckBox fx:id="Ispatient" layoutX="17.0" layoutY="129.0" mnemonicParsing="false" text="Эмчлүүлэгч" />
+                              <CheckBox fx:id="isCalendar" layoutX="211.0" layoutY="129.0" mnemonicParsing="false" text="Хуваарь" />
+                              <CheckBox fx:id="isInspection" layoutX="398.0" layoutY="129.0" mnemonicParsing="false" text="Үзлэг" />
+                              <CheckBox fx:id="isTreatment" layoutX="17.0" layoutY="179.0" mnemonicParsing="false" text="Эмчилгээ" />
+                              <CheckBox fx:id="isPayment" layoutX="213.0" layoutY="179.0" mnemonicParsing="false" text="Төлбөр" />
+                              <CheckBox fx:id="isAccess" layoutX="398.0" layoutY="179.0" mnemonicParsing="false" text="Хандалт" />
+                              <Button fx:id="posDeleteBtn" layoutX="357.0" layoutY="14.0" mnemonicParsing="false" onAction="#deletePosition" prefHeight="31.0" prefWidth="101.0" text="Устгах" />
+                           </children>
+                        </Pane>
                      </children>
                   </Pane>
                </children>

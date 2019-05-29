@@ -262,7 +262,8 @@ public class MainWindowController  {
     	too1 = too - Double.parseDouble(Tolbor.getText()); 
     	hariult.setText(Double.toString(too1));
     }
-        @FXML void Search(ActionEvent event) {
+        @FXML 
+        void Search(ActionEvent event) {
         	double st = 0;
         	hariult.setText("");
         	TolsonDun.setText("");
@@ -313,6 +314,7 @@ public class MainWindowController  {
 				e.printStackTrace();
 			}
         }
+        
         @FXML
         void handleOnKeyPressed(KeyEvent event) throws JRException {
         	switch(event.getCode())

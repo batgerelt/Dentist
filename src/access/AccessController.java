@@ -28,6 +28,7 @@ public class AccessController {
             return false;
         }
     }
+
     User loggedInUser;
 
     User selectedUser;
