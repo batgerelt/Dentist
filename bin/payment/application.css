@@ -1,0 +1,24 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+.root {
+   /* -fx-base: #F7F8E0; */
+}
+
+ .tab{
+    -fx-background-radius: 0;
+    -fx-background-color:  derive(-fx-base, 0%);
+    -fx-background-insets: 0.3;
+    -fx-text-fill: red;
+    -fx-focus-color: Black;
+}
+
+.tab:hover{
+    -fx-background-color:  derive(-fx-base, 80%);
+}
+
+.tab:selected{
+    -fx-background-color:  derive(#003a8c, 60%);
+    -fx-border-color: none;
+    -fx-text-fill: Black;
+    -fx-color:Black;
+}
