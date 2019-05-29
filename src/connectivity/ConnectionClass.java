@@ -3,7 +3,9 @@ package connectivity;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-//https://www.youtube.com/watch?v=8WJ5p3T9Iss эндээс бичлэг үзээрэй
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+
 public class ConnectionClass {
     public Connection connection;
 
@@ -17,11 +19,14 @@ public class ConnectionClass {
             Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection("jdbc:mysql://"+hostname+"/"+dbname + "?autoReconnect=true&useSSL=false", userName, password);
 
-        }catch (Exception e){
-            e.printStackTrace();
+        } catch (Exception e){
+        	Alert alert = new Alert(AlertType.WARNING, ""); 
+        	alert.setTitle("");
+        	alert.setHeaderText("Өгөгдлийн сантай холбогдох үед алдаа гарлаа");
+        	alert.showAndWait();
         }
 
-        return connection;
+         return connection;
     }
 
 }

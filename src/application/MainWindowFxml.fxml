@@ -36,15 +36,32 @@
 
 <AnchorPane maxHeight="900.0" maxWidth="1173.0" minHeight="900.0" minWidth="1173.0" prefHeight="900.0" prefWidth="1173.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainWindowController">
 	<children>
-		<TabPane layoutX="-1.0" layoutY="63.0" prefHeight="801.0" prefWidth="1173.0" tabClosingPolicy="UNAVAILABLE">
+		<Pane layoutX="-3.0" onDragDetected="#handleClickCloseBtn" prefHeight="61.0" prefWidth="1180.0" style="-fx-background-color: #3196DE;" AnchorPane.topAnchor="0.0">
+			<children>
+				<ImageView fitHeight="72.0" fitWidth="56.0" layoutX="14.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+					<image>
+						<Image url="@../assets/logo.png" />
+					</image>
+				</ImageView>
+				<ImageView fx:id="logout" fitHeight="38.0" fitWidth="41.0" focusTraversable="true" layoutX="1128.0" layoutY="12.0" onMouseClicked="#handleLogout" pickOnBounds="true" preserveRatio="true">
+					<image>
+						<Image url="@../assets/logouting.png" />
+					</image>
+				</ImageView>
+			</children>
+			<effect>
+				<Blend />
+			</effect>
+		</Pane>
+		<TabPane fx:id="tabpane" layoutX="-1.0" layoutY="63.0" prefHeight="801.0" prefWidth="1173.0" tabClosingPolicy="UNAVAILABLE">
 			<tabs>
-				<Tab text="Эмчлүүлэгч">
+				<Tab id="patient" fx:id="patient" text="Эмчлүүлэгч">
 					<content>
 						<fx:include source="../patient/patient_view.fxml" />
 					</content>
 				</Tab>
 
-				<Tab text="Хуваарь">
+				<Tab fx:id="schedule" text="Хуваарь">
 					<content>
 						<BorderPane fx:id="rootPane" prefHeight="520.0" prefWidth="900.0">
 							<center>
@@ -236,7 +253,7 @@
 						</BorderPane>
 					</content>
 				</Tab>
-				<Tab text="Үзлэг">
+				<Tab fx:id="inspection" closable="false" text="Үзлэг">
 					<content>
 						<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
 							<children>
@@ -425,7 +442,7 @@
 						</AnchorPane>
 					</content>
 				</Tab>
-				<Tab text="Эмчилгээ">
+				<Tab fx:id="treatment" text="Эмчилгээ">
 					<content>
 						<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
 							<children>
@@ -590,17 +607,17 @@
 						</AnchorPane>
 					</content>
 				</Tab>
-				<Tab text="Ажилтан">
+				<Tab fx:id="access" text="Ажилтан">
 					<content>
 						<fx:include source="../access/access_view.fxml" />
 					</content>
 				</Tab>
-				<Tab text="Төлбөр">
+				<Tab fx:id="payment" text="Төлбөр">
 					<content>
 						<fx:include source="../payment/payment_view.fxml" />
 					</content>
 				</Tab>
-				<Tab text="Тайлан">
+				<Tab fx:id="report" text="Тайлан">
 					<content>
 						<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="682.0" prefWidth="1173.0" style="-fx-background-color: #F0F0F0F0;">
 							<children>
@@ -617,23 +634,12 @@
 					</content>
 				</Tab>
 			</tabs>
+         <effect>
+            <Blend />
+         </effect>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
 		</TabPane>
-		<Pane layoutX="-3.0" onDragDetected="#handleClickCloseBtn" prefHeight="61.0" prefWidth="1180.0" style="-fx-background-color: #3196DE;" AnchorPane.topAnchor="0.0">
-			<children>
-				<ImageView fitHeight="72.0" fitWidth="56.0" layoutX="14.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
-					<image>
-						<Image url="@../assets/logo.png" />
-					</image>
-				</ImageView>
-				<ImageView fx:id="logout" fitHeight="38.0" fitWidth="41.0" focusTraversable="true" layoutX="1128.0" layoutY="12.0" onMouseClicked="#handleLogout" pickOnBounds="true" preserveRatio="true">
-					<image>
-						<Image url="@../assets/logouting.png" />
-					</image>
-				</ImageView>
-			</children>
-			<effect>
-				<Blend />
-			</effect>
-		</Pane>
 	</children>
 </AnchorPane>

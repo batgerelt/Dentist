@@ -7,23 +7,25 @@ import java.time.LocalDate;
 
 public class Access {
     String name;
-    Boolean ispatient;
-    Boolean isCalendar;
+    Boolean isPatient;
+    Boolean isSchedule;
     Boolean isInspection;
     Boolean isTreatment;
     Boolean isPayment;
     Boolean isAccess;
+    Boolean isReport;
     int id;
 
-    Access(String name, Boolean ispatient, Boolean isCalendar, Boolean isInspection, Boolean isTreatment,
-               Boolean isPayment, Boolean isAccess, int id){
+    Access(String name, Boolean isPatient, Boolean isSchedule, Boolean isInspection, Boolean isTreatment,
+               Boolean isPayment, Boolean isAccess, Boolean isReport, int id){
         this.name = name;
-        this.ispatient = ispatient;
-        this.isCalendar= isCalendar;
+        this.isPatient = isPatient;
+        this.isSchedule= isSchedule;
         this.isInspection = isInspection;
         this.isTreatment = isTreatment;
         this.isPayment = isPayment;
         this.isAccess = isAccess;
+        this.isReport = isReport;
         this.id = id;
     }
 
@@ -38,19 +40,19 @@ public class Access {
     }
 
     public Boolean getIspatient() {
-        return ispatient;
+        return isPatient;
     }
 
-    public void setIspatient(Boolean ispatient) {
-        this.ispatient = ispatient;
+    public void setIspatient(Boolean isPatient) {
+        this.isPatient = isPatient;
     }
 
     public Boolean getCalendar() {
-        return isCalendar;
+        return isSchedule;
     }
 
-    public void setCalendar(Boolean calendar) {
-        isCalendar = calendar;
+    public void setCalendar(Boolean isSchedule) {
+    	isSchedule = isSchedule;
     }
 
     public Boolean getInspection() {
@@ -84,6 +86,14 @@ public class Access {
     public void setAccess(Boolean access) {
         isAccess = access;
     }
+    
+    public Boolean getReport() {
+        return isReport;
+    }
+
+    public void setReport(Boolean isReport) {
+        this.isReport = isReport;
+    }
 
     public int getId() {
         return id;
@@ -94,14 +104,15 @@ public class Access {
     }
 
     Access(String name, Boolean ispatient, Boolean isCalendar, Boolean isInspection, Boolean isTreatment,
-           Boolean isPayment, Boolean isAccess){
+           Boolean isPayment, Boolean isAccess, Boolean isSchedule){
         this.name = name;
-        this.ispatient = ispatient;
-        this.isCalendar= isCalendar;
+        this.isPatient = ispatient;
+        this.isSchedule= isCalendar;
         this.isInspection = isInspection;
         this.isTreatment = isTreatment;
         this.isPayment = isPayment;
         this.isAccess = isAccess;
+        this.isReport = isSchedule;
     }
 
     Access(){
@@ -114,10 +125,10 @@ public class Access {
             ConnectionClass connectionClass = new ConnectionClass();
             Connection connection = connectionClass.getConnection();
 
-            String sql = "INSERT INTO Access(name, ispatient, isCalendar, isInspection, isTreatment, isPayment, isAccess" +
+            String sql = "INSERT INTO Access(name, isPatient, isSchedule, isInspection, isTreatment, isPayment, isAccess, isReport" +
                     ")VALUES('"+this.getName()+"',"+this.getIspatient()+","+this.getCalendar()+","+
                     this.getInspection()+","+this.getTreatment()+","+this.getPayment()+","+
-                    this.getAccess() +")";
+                    this.getAccess()+","+this.getReport() +")";
             PreparedStatement statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             statement.executeUpdate();
             ResultSet generatedKeys = statement.getGeneratedKeys();
@@ -134,10 +145,9 @@ public class Access {
         ConnectionClass connectionClass = new ConnectionClass();
         Connection connection = connectionClass.getConnection();
 
-        String sql = "Update Access set name='" +this.getName()+"', ispatient="+this.getIspatient()+", isCalendar="+this.getCalendar()+
+        String sql = "Update Access set name='" +this.getName()+"', isPatient="+this.getIspatient()+", isSchedule="+this.getCalendar()+
                 ", isInspection="+this.getInspection()+",isTreatment="+this.getTreatment()
-                +", isPayment="+this.getPayment()+
-                ",isAccess="+this.getAccess()+" where id="+this.getId();
+                +", isPayment="+this.getPayment()+",isAccess="+this.getAccess()+",isReport="+this.getReport()+ " where id="+this.getId();
         PreparedStatement preparedStmt = connection.prepareStatement(sql);
         preparedStmt.executeUpdate();
     }
@@ -161,12 +171,13 @@ public class Access {
         while(resultSet.next()){
             this.setId(resultSet.getInt("id"));
             this.setName(resultSet.getString("name"));
-            this.setIspatient(resultSet.getBoolean("ispatient"));
-            this.setCalendar(resultSet.getBoolean("isCalendar"));
+            this.setIspatient(resultSet.getBoolean("isPatient"));
+            this.setCalendar(resultSet.getBoolean("isSchedule"));
             this.setInspection(resultSet.getBoolean("isInspection"));
             this.setTreatment(resultSet.getBoolean("isTreatment"));
             this.setPayment(resultSet.getBoolean("isPayment"));
             this.setAccess(resultSet.getBoolean("isAccess"));
+            this.setAccess(resultSet.getBoolean("isReport"));
         }
     }
 

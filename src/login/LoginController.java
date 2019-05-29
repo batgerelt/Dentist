@@ -3,6 +3,8 @@ package login;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
+
+import application.MainWindowController;
 import connectivity.ConnectionClass;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -61,7 +63,7 @@ public class LoginController {
     @FXML
     void login(ActionEvent event) throws SQLException {
         if (password.getText().isEmpty() || username.getText().isEmpty()) {
-            logintext.setText("Нэвтрэх нэр болон нууц үгээ оруулна уу!");
+            logintext.setText("Хэрэглэгчийн нэвтрэх нэр болон нууц үгээ оруулна уу!");
         } else {
             ConnectionClass connectionClass = new ConnectionClass();
             Connection connection = connectionClass.getConnection();
@@ -69,7 +71,7 @@ public class LoginController {
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(sql);
             if(!resultSet.next()){
-                logintext.setText("Нэвтрэх нэр олдсонгүй.");
+                logintext.setText("Хэрэглэгчийн нэвтрэх нэр болон нууц үг буруу байна.");
                 return;
             }
             resultSet.beforeFirst();
@@ -78,15 +80,13 @@ public class LoginController {
                     try {
                         loggedInUser.getUserByEmail(username.getText());
 
-//                        FXMLLoader view = new FXMLLoader(getClass().getResource("../patient/patient_view.fxml"));
                         FXMLLoader view = new FXMLLoader(getClass().getResource("../application/MainWindowFxml.fxml"));
-
 
                         Parent patient = view.load();
 
-//                        PatientController patientController = view.getController();
-//                        patientController.setLoggedInUser(loggedInUser);
-//
+                        MainWindowController mainController = view.getController();
+                        mainController.setLoggedInUser(loggedInUser);
+
                         Scene scene = new Scene(patient);
                         Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 //                        appStage.initStyle(StageStyle.DECORATED);
@@ -97,7 +97,7 @@ public class LoginController {
                         e.printStackTrace();
                     }
                 } else {
-                    logintext.setText("Нэвтрэх нэр нууц үг буруу байна.");
+                    logintext.setText("Хэрэглэгчийн нэвтрэх нэр болон нууц үг буруу байна.");
                 }
             }
 

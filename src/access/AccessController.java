@@ -122,12 +122,13 @@ public class AccessController {
         posBackBtn.setVisible(false);
         posSaveBtn.setVisible(false);
         PosName.setDisable(true);
-        Ispatient.setDisable(true);
-        isCalendar.setDisable(true);
+        isPatient.setDisable(true);
+        isSchedule.setDisable(true);
         isInspection.setDisable(true);
         isTreatment.setDisable(true);
         isPayment.setDisable(true);
         isAccess.setDisable(true);
+        isReport.setDisable(true);
     }
 
     public void employeeBtnVi(){
@@ -148,12 +149,14 @@ public class AccessController {
         posBackBtn.setVisible(true);
         posSaveBtn.setVisible(true);
         PosName.setDisable(false);
-        Ispatient.setDisable(false);
-        isCalendar.setDisable(false);
+        isPatient.setDisable(false);
+        isSchedule.setDisable(false);
         isInspection.setDisable(false);
         isTreatment.setDisable(false);
         isPayment.setDisable(false);
         isAccess.setDisable(false);
+        isReport.setDisable(false);
+        
     }
 
     public void showAlert(String text) {
@@ -166,12 +169,13 @@ public class AccessController {
 
     public void clearAccessValues(){
         PosName.clear();
-        Ispatient.setSelected(false);
-        isCalendar.setSelected(false);
+        isPatient.setSelected(false);
+        isSchedule.setSelected(false);
         isInspection.setSelected(false);
         isTreatment.setSelected(false);
         isPayment.setSelected(false);
         isAccess.setSelected(false);
+        isReport.setSelected(false);
     }
 
     public void clearUserValues(){
@@ -197,7 +201,7 @@ public class AccessController {
     @FXML
     private Button userSearchBtn;
     @FXML
-    private CheckBox Ispatient;
+    private CheckBox isPatient;
     @FXML
     private TableView<Access> PosTable;
     @FXML
@@ -229,7 +233,7 @@ public class AccessController {
     @FXML
     private Button userEditBtn;
     @FXML
-    private CheckBox isCalendar;
+    private CheckBox isSchedule;
     @FXML
     private TableColumn<?, ?> userListFname;
     @FXML
@@ -265,6 +269,8 @@ public class AccessController {
     @FXML
     private CheckBox isAccess;
     @FXML
+    private CheckBox isReport;
+    @FXML
     private Button posBackBtn;
     @FXML
     private Button posViewBtn;
@@ -280,10 +286,10 @@ public class AccessController {
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery(qry);
         while(resultSet.next()){
-            Access acs = new Access(resultSet.getString("name"),resultSet.getBoolean("ispatient"),
-                    resultSet.getBoolean("isCalendar"), resultSet.getBoolean("isInspection"),
+            Access acs = new Access(resultSet.getString("name"),resultSet.getBoolean("isPatient"),
+                    resultSet.getBoolean("isSchedule"), resultSet.getBoolean("isInspection"),
                     resultSet.getBoolean("isTreatment"),resultSet.getBoolean("isPayment"),
-                    resultSet.getBoolean("isAccess"), resultSet.getInt("id"));
+                    resultSet.getBoolean("isAccess"), resultSet.getBoolean("isReport"), resultSet.getInt("id"));
             AccessList.add(acs);
             PosListName.setCellValueFactory(new PropertyValueFactory<>("name"));
         }
@@ -377,12 +383,13 @@ public class AccessController {
             accessBtnInvi();
             selectedAccess = PosTable.getSelectionModel().getSelectedItem();
             PosName.setText(selectedAccess.getName());
-            Ispatient.setSelected(selectedAccess.getIspatient());
-            isCalendar.setSelected(selectedAccess.getCalendar());
+            isPatient.setSelected(selectedAccess.getIspatient());
+            isSchedule.setSelected(selectedAccess.getCalendar());
             isInspection.setSelected(selectedAccess.getInspection());
             isTreatment.setSelected(selectedAccess.getTreatment());
             isPayment.setSelected(selectedAccess.getPayment());
             isAccess.setSelected(selectedAccess.getAccess());
+            isReport.setSelected(selectedAccess.getAccess());
         }
     }
 
@@ -544,15 +551,15 @@ public class AccessController {
             return;
         }
         else if(selectedAccess==null){
-            Access access = new Access(PosName.getText(), Ispatient.isSelected(), isCalendar.isSelected(),
-                    isInspection.isSelected(), isTreatment.isSelected(), isPayment.isSelected(), isAccess.isSelected());
+            Access access = new Access(PosName.getText(), isPatient.isSelected(), isSchedule.isSelected(),
+                    isInspection.isSelected(), isTreatment.isSelected(), isPayment.isSelected(), isAccess.isSelected(), isReport.isSelected());
             access.createAccess();
             selectedAccess = access;
         }
         else{
             selectedAccess.setName(PosName.getText());
-            selectedAccess.setIspatient(Ispatient.isSelected());
-            selectedAccess.setCalendar(isCalendar.isSelected());
+            selectedAccess.setIspatient(isPatient.isSelected());
+            selectedAccess.setCalendar(isSchedule.isSelected());
             selectedAccess.setInspection(isInspection.isSelected());
             selectedAccess.setTreatment(isTreatment.isSelected());
             selectedAccess.setPayment(isPayment.isSelected());
