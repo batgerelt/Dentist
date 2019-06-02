@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4" pageWidth="158" pageHeight="481" columnWidth="158" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="63d7f894-e4f7-4281-b196-128955d5a691">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
+	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_TH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_CH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 2_TH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 2_CH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 3_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<topPen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<leftPen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<bottomPen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<rightPen lineWidth="0.5" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="Table 3_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<topPen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<leftPen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<bottomPen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<rightPen lineWidth="0.5" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="Table 3_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<topPen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<leftPen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<bottomPen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<rightPen lineWidth="0.5" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<subDataset name="Dataset1" uuid="93212c0e-23d2-4bac-accf-db51bd7e514d">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapter.xml"/>
+		<queryString language="SQL">
+			<![CDATA[select *from bill]]>
+		</queryString>
+		<field name="all_price" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="all_price"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="bill"/>
+		</field>
+		<field name="bill_id" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="bill_id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="bill"/>
+		</field>
+		<field name="ddtd_id" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="ddtd_id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="bill"/>
+		</field>
+		<field name="lottery_id" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="lottery_id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="bill"/>
+		</field>
+		<field name="noat" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="noat"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="bill"/>
+		</field>
+		<field name="picture" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="picture"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="bill"/>
+		</field>
+		<field name="ttd_id" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="ttd_id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="bill"/>
+		</field>
+		<field name="inspection_id" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="inspection_id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="bill"/>
+		</field>
+		<field name="bttd_id" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="bttd_id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="bill"/>
+		</field>
+		<field name="patient_type" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="patient_type"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="bill"/>
+		</field>
+	</subDataset>
+	<subDataset name="Dataset2" uuid="5c292abf-d1e6-4d8e-9989-7ac9f75d7cb1">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
+		<queryString language="SQL">
+			<![CDATA[select *from  treatment 
+where Id in (select t_id from inspection
+						where id in(select inspection_id from bill)
+)]]>
+		</queryString>
+		<field name="id" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="id"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="treatment"/>
+		</field>
+		<field name="t_name" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="t_name"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="treatment"/>
+		</field>
+		<field name="unit" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="unit"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="treatment"/>
+		</field>
+		<field name="price" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="price"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="treatment"/>
+		</field>
+		<group name="id">
+			<groupExpression><![CDATA[$F{id}]]></groupExpression>
+		</group>
+		<group name="t_name">
+			<groupExpression><![CDATA[$F{t_name}]]></groupExpression>
+		</group>
+		<group name="unit">
+			<groupExpression><![CDATA[$F{unit}]]></groupExpression>
+		</group>
+		<group name="price">
+			<groupExpression><![CDATA[$F{price}]]></groupExpression>
+		</group>
+	</subDataset>
+	<parameter name="net.sf.jasperreports.csv.source" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="CSV_INPUT_STREAM" class="java.io.InputStream" isForPrompting="false"/>
+	<parameter name="CSV_URL" class="java.net.URL" isForPrompting="false"/>
+	<parameter name="CSV_FILE" class="java.io.File" isForPrompting="false"/>
+	<parameter name="net.sf.jasperreports.csv.encoding" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="CSV_READER" class="java.io.Reader" isForPrompting="false"/>
+	<parameter name="net.sf.jasperreports.csv.column.names" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="CSV_COLUMN_NAMES_ARRAY" class="java.lang.String[]" isForPrompting="false"/>
+	<parameter name="CSV_DATE_FORMAT" class="java.text.DateFormat" isForPrompting="false"/>
+	<parameter name="net.sf.jasperreports.csv.date.pattern" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="net.sf.jasperreports.csv.field.delimiter" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="CSV_NUMBER_FORMAT" class="java.text.NumberFormat" isForPrompting="false"/>
+	<parameter name="net.sf.jasperreports.csv.number.pattern" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="net.sf.jasperreports.csv.record.delimiter" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="CSV_USE_FIRST_ROW_AS_HEADER" class="java.lang.Boolean" isForPrompting="false"/>
+	<parameter name="CSV_LOCALE" class="java.util.Locale" isForPrompting="false"/>
+	<parameter name="net.sf.jasperreports.csv.locale.code" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="CSV_TIMEZONE" class="java.util.TimeZone" isForPrompting="false"/>
+	<parameter name="net.sf.jasperreports.csv.timezone.id" class="java.lang.String" isForPrompting="false"/>
+	<queryString language="SQL">
+		<![CDATA[select *from bill]]>
+	</queryString>
+	<field name="all_price" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="all_price"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bill"/>
+	</field>
+	<field name="bill_id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="bill_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bill"/>
+	</field>
+	<field name="ddtd_id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="ddtd_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bill"/>
+	</field>
+	<field name="lottery_id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="lottery_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bill"/>
+	</field>
+	<field name="noat" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="noat"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bill"/>
+	</field>
+	<field name="picture" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="picture"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bill"/>
+	</field>
+	<field name="ttd_id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="ttd_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bill"/>
+	</field>
+	<field name="inspection_id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="inspection_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bill"/>
+	</field>
+	<field name="bttd_id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="bttd_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bill"/>
+	</field>
+	<field name="patient_type" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="patient_type"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="bill"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="65" splitType="Stretch">
+			<staticText>
+				<reportElement x="6" y="9" width="146" height="20" uuid="b312af4d-82e6-4ccd-b53d-4588025a3599"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CRYSTAL DENTAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="14" y="27" width="130" height="19" uuid="0eb0db11-c036-40de-802d-84259c9b8d5b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="7"/>
+				</textElement>
+				<text><![CDATA[ХУД-ийн 16-р хороо БуянтУхаа-1 715-7 тоот]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="9" y="33" width="140" height="30" uuid="e222e9d2-688a-4290-9be3-c3412fdebc5c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[холбоо барих утас: 76000089, 98885099]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="151" splitType="Stretch">
+			<staticText>
+				<reportElement x="7" y="0" width="55" height="19" uuid="c7af40c6-6526-4cd0-bfca-a6ceaf925f23"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[ТТД:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="8" y="13" width="55" height="20" uuid="f219dbf7-7944-46f8-b598-9be1ac4b463c"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[ДДТД:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="27" width="55" height="19" uuid="9d569c5a-8119-464b-9b5f-4438c1681e8e"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<text><![CDATA[Огноо:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="38" width="70" height="21" uuid="3d3d2467-6802-4e45-94bf-6c81c27067bf"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Үйлчлүүлэгч:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="70" y="0" width="82" height="19" uuid="eb92dff4-6bb8-4acd-b973-125e113744ef"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ttd_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="70" y="15" width="90" height="17" uuid="e8767813-c844-4ddf-ab4f-5f6c3d0f60fa"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ddtd_id}]]></textFieldExpression>
+			</textField>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="70" y="27" width="90" height="19" uuid="e90968d4-978b-47de-bd9b-c20349b5a612"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="72" y="55" width="71" height="14" uuid="ca82c996-9106-4511-aa46-78a5732900ad"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bttd_id}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="8" y="51" width="75" height="20" uuid="0a69d5dc-76e6-4f7f-916f-fdd6d882622f"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[ТТД:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="71" y="41" width="72" height="14" uuid="48da370f-7719-4e2f-816b-8f221f1015a3"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{patient_type}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="3" y="60" width="50" height="30" uuid="204586c3-9ff6-43fa-9e11-6ff33e4d201e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[ Эмчилгээ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="56" y="60" width="30" height="30" uuid="ee8fa45f-2ebb-4019-ab41-faa5c4e21966"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[НӨАТ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="88" y="60" width="30" height="30" uuid="55987ed5-9e11-47b6-a772-fe0ad0b49a37"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[НХАТ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="111" y="60" width="50" height="30" uuid="e1f4306e-3975-4a04-911b-fa8da98d55c3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Нэгж үнэ]]></text>
+			</staticText>
+			<componentElement>
+				<reportElement x="1" y="84" width="157" height="30" uuid="1f3b8e65-a663-4942-b5a9-95eabc7334c0"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="Dataset2" uuid="3cfdb7bf-1554-4eb3-8925-13a000ca33bc">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:listContents height="30" width="157">
+						<textField>
+							<reportElement x="10" y="0" width="60" height="30" uuid="6ea652ce-2ffa-4ebe-8cda-b2e6422915e5"/>
+							<textElement textAlignment="Left" verticalAlignment="Middle"/>
+							<textFieldExpression><![CDATA[$F{t_name}]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement x="57" y="0" width="35" height="30" uuid="3acf6f80-1c91-4f5b-bdc8-4de579ac7205"/>
+							<textElement verticalAlignment="Middle"/>
+							<textFieldExpression><![CDATA[$F{price}.doubleValue()*0.10]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement x="95" y="0" width="40" height="30" uuid="549ae0ca-4548-44a6-aa3f-729b5e917178"/>
+							<textElement verticalAlignment="Middle"/>
+							<textFieldExpression><![CDATA[0.00]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement x="122" y="0" width="35" height="30" uuid="2035c64d-7b57-4480-ad63-8e1a10a0a264"/>
+							<textElement verticalAlignment="Middle"/>
+							<textFieldExpression><![CDATA[$F{price}]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="101" splitType="Stretch">
+			<staticText>
+				<reportElement x="9" y="6" width="39" height="14" uuid="bb77355e-812e-4b8d-bb73-56879c8feba8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[НӨАТ:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="9" y="33" width="40" height="19" uuid="12e40689-327e-4a5c-bce3-2467026f8d82"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Нийт үнэ:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="9" y="49" width="63" height="16" uuid="7d75f0e2-3bae-46b2-807a-6c443a865afd"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Хөнгөлөлт:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="9" y="62" width="48" height="18" uuid="4f43e8d0-9d09-4782-a12f-e18f52ce0d05"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Төлөх дүн:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="9" y="75" width="76" height="19" uuid="6280a388-f269-4ab6-a5c5-f6f3aea45683"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Төлсөн дүн:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="92" y="2" width="44" height="22" uuid="9faa8256-da8a-4290-9fc8-aaace72a7708"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{noat}.doubleValue()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="91" y="33" width="58" height="18" uuid="90212574-014b-468d-9ecd-9550155e44be"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{all_price}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="92" y="20" width="59" height="16" uuid="f8cb9895-422e-403c-9403-0e94043eef87"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lottery_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="91" y="60" width="54" height="19" uuid="b6707483-5f1a-4320-a412-5b9f2f3288b1"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{all_price}.doubleValue()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="91" y="47" width="56" height="18" uuid="25a4626e-b7fd-4a22-bd12-b10f261e1924"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[0.00]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="92" y="78" width="54" height="12" uuid="10158a8e-7789-4c35-a77b-b8b759740adb"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{all_price}.doubleValue()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="9" y="18" width="82" height="18" uuid="6dac3dbc-a7bb-4354-82f5-67fb22f3c23f"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[Сугалааны №:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-2" y="2" width="160" height="1" uuid="a9eec727-cf3d-43a6-ad06-7490ba72d5b9"/>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="134" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="0" width="158" height="1" uuid="f723e01b-9cbc-4193-93fd-75b2828f5e2a"/>
+			</line>
+			<image onErrorType="Blank">
+				<reportElement x="15" y="10" width="27" height="30" uuid="3c360d64-89fb-4048-8e87-66e0b76d931d"/>
+				<imageExpression><![CDATA["/16621153.png"]]></imageExpression>
+			</image>
+		</band>
+	</pageFooter>
+</jasperReport>

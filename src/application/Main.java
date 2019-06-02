@@ -17,7 +17,7 @@ public class Main extends Application {
 			primaryStage.getIcons().add(new Image("file:icon.png"));
 			primaryStage.setTitle("Dentist Medical");
 			primaryStage.setScene(new Scene(root, 680, 450));
-			//primaryStage.setResizable(false);
+			primaryStage.setResizable(false);
 			primaryStage.show();
 		} catch(Exception e) {
 			e.printStackTrace();

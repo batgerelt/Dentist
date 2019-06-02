@@ -164,6 +164,8 @@ public class Patient {
                 "', Address='"+this.getAddress()+"',Email='"+this.getEmail()+"',Pnumber='"+this.getPnumber()+"', Gender='"+this.getGender()+
                 "',comment='"+this.getComment()+"', RegisterNo='"+this.getRegisterNo()+"' where id="+this.getId();
         sql = sql.replace("'null'","null");
+        
+        System.out.print(sql);
         PreparedStatement preparedStmt = connection.prepareStatement(sql);
         preparedStmt.executeUpdate();
     }

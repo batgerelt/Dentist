@@ -38,7 +38,7 @@ public class ReportController {
     	ConnectionClass connectionClass = new ConnectionClass();
         Connection connection = connectionClass.getConnection();
     	 HashMap param = new HashMap();
-    	 JasperDesign jd = JRXmlLoader.load(new File("C:\\Users\\Batgerelt\\workspace\\Dentist\\src\\assets\\Report.jrxml"));
+    	 JasperDesign jd = JRXmlLoader.load(new File("C:\\Users\\Batgerelt\\Documents\\GitHub\\Dentist\\src\\report\\Report.jrxml"));
     	 Date date_end = Date.from(end_date.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant());
     	 Date date_start = Date.from(start_date.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant());
           param.put("END_DATE",date_end);
@@ -62,7 +62,7 @@ public class ReportController {
           param.put("START_DATE",date_start);
           param.put("doctorID", Doc_id.getText());
           
-    	 JasperDesign jd = JRXmlLoader.load(new File("C:\\Users\\Batgerelt\\workspace\\Dentist\\src\\assets\\DoctorReport.jrxml"));
+    	 JasperDesign jd = JRXmlLoader.load(new File("C:\\Users\\Batgerelt\\Documents\\GitHub\\Dentist\\src\\report\\DoctorReport.jrxml"));
         // param.put("name", );
           //param.put();
           JasperReport jr =  JasperCompileManager.compileReport(jd);

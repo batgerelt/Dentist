@@ -152,6 +152,8 @@ public class User {
                     "VALUES ('"+this.getRegister_no()+"','" +this.getLname()+"','"+this.fname+"','"+this.dateOfBirth+"','"+this.position+
                     "','"+this.email+"','"+this.address+"','"+this.phonenumber+"','"+this.gender+"')";
         PreparedStatement statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+        
+        System.out.print(sql);
         statement.executeUpdate();
         ResultSet generatedKeys = statement.getGeneratedKeys();
         if (generatedKeys.next()) {

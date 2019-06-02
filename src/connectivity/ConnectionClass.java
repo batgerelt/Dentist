@@ -11,13 +11,13 @@ public class ConnectionClass {
 
     public Connection getConnection() {
         String hostname = "localhost";
-        String dbname = "dental";
+        String dbname = "dentistmedical";
         String userName = "root";
         String password = "";
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://"+hostname+"/"+dbname + "?autoReconnect=true&useSSL=false", userName, password);
+            connection = DriverManager.getConnection("jdbc:mysql://"+hostname+"/"+dbname + "?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&useSSL=false", userName, password);
 
         } catch (Exception e){
         	Alert alert = new Alert(AlertType.WARNING, ""); 

@@ -20,6 +20,15 @@
         User loggedInUser;
         Patient selectedPatient;
         ObservableList<Patient> PatientList = FXCollections.observableArrayList();
+        public boolean isInteger( String input ) {
+            try {
+                Integer.parseInt( input );
+                return true;
+            }
+            catch( Exception e ) {
+                return false;
+            }
+        }
 
         @FXML
         private Button patientBackBtn;
@@ -229,6 +238,10 @@
                         return false;
                     }
                 }
+                if(!isInteger(patientPhone.getText())){
+                    showAlert("Утасны дугаар буруу байна.");
+                    return false;
+                }
                 return true;
             }catch (SQLException e){
                 showAlert(e.getMessage());
@@ -276,7 +289,7 @@
             this.patientPhone.setDisable(true);
             this.patientRegisterNo.setDisable(true);
             this.patientSurname.setDisable(true);
-            this.patientDob.setDisable(true);
+            this.patientDob.setDisable(true); 
             this.patientGender.setDisable(true);
         }
 

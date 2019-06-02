@@ -161,7 +161,7 @@ public class MainWindowController  {
         			ConnectionClass connectionClass = new ConnectionClass();
                     Connection connection = connectionClass.getConnection();
                     
-        			JasperReport report = JasperCompileManager.compileReport("/dentist/src/Blank_A4.jrxml");
+        			JasperReport report = JasperCompileManager.compileReport("C:\\Users\\Batgerelt\\Documents\\GitHub\\Dentist\\src\\payment\\Blank_A4.jrxml");
         	          JasperPrint jp = JasperFillManager.fillReport(report, null, connection);
         	          JasperViewer jv = new JasperViewer(jp,false);
         	          jv.setVisible(true);
