@@ -50,7 +50,6 @@ public class User {
         this.password = Password;
         this.position = position;
         this.id = id;
-
     }
 
     public User(){

@@ -31,14 +31,15 @@ CREATE TABLE `access` (
   `isPayment` int(1) DEFAULT '0',
   `isReport` int(1) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 /*Data for the table `access` */
 
 insert  into `access`(`id`,`name`,`isPatient`,`isSchedule`,`isInspection`,`isTreatment`,`isAccess`,`isPayment`,`isReport`) values 
 (1,'Эмч',0,0,0,0,0,0,0),
 (2,'Админ',1,1,1,1,1,1,0),
-(3,'Хүлээн авах',1,1,0,0,0,0,0);
+(3,'Хүлээн авах',1,1,0,0,0,0,0),
+(4,'Сувилагч',1,1,1,1,0,0,0);
 
 /*Table structure for table `bill` */
 
@@ -73,18 +74,19 @@ CREATE TABLE `inspection` (
   `date` datetime NOT NULL,
   `doctor_id` int(11) NOT NULL,
   `pain_now` varchar(500) DEFAULT NULL,
+  `zoolon_ed` varchar(200) DEFAULT NULL,
   `lymph_gland_type` varchar(500) DEFAULT NULL,
   `lips` varchar(500) DEFAULT NULL,
   `tongue` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 /*Data for the table `inspection` */
 
-insert  into `inspection`(`id`,`p_id`,`t_id`,`date`,`doctor_id`,`pain_now`,`lymph_gland_type`,`lips`,`tongue`) values 
-(1,123,3,'2019-05-02 00:00:00',1,'bhgui','zugere','goy','йыб'),
-(2,34,27,'2019-05-16 00:00:00',11,'fgstsf',NULL,'asrewa','awefewfewa'),
-(3,88,3,'2019-06-09 00:00:00',1,'njn','nj',NULL,NULL);
+insert  into `inspection`(`id`,`p_id`,`t_id`,`date`,`doctor_id`,`pain_now`,`zoolon_ed`,`lymph_gland_type`,`lips`,`tongue`) values 
+(14,123,1,'2019-06-01 00:00:00',1,'asdf',NULL,'asdf','asdf','asdf'),
+(15,123,1,'2019-06-01 00:00:00',1,'hgjf',NULL,'fghj','fghj','fghj'),
+(16,123,1,'2019-06-02 00:00:00',1,'nb',NULL,'bn','cvnb','cvnb');
 
 /*Table structure for table `pain` */
 
@@ -94,13 +96,13 @@ CREATE TABLE `pain` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `p_name` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 /*Data for the table `pain` */
 
 insert  into `pain`(`id`,`p_name`) values 
-(1,'ы'),
-(2,'Халуун хүйтэн '),
+(1,'Янгинаж'),
+(2,'Халуун хүйтэн'),
 (3,'Шөнө'),
 (4,'Лугшиж'),
 (5,'Аяндаа'),
@@ -109,7 +111,12 @@ insert  into `pain`(`id`,`p_name`) values
 (8,'Шүд цоорсон'),
 (9,'Гоо сайхны зовиуртай'),
 (10,'Урьдчилан сэргийлэх үзлэгт хамрагдах'),
-(11,'Амнаас эвгүй үнэр гардаг ');
+(11,'Амнаас эвгүй үнэр гардаг'),
+(12,'Алдагдсан'),
+(13,'Хэвийн'),
+(14,'Тийм'),
+(15,'Тийм'),
+(16,'Тийм');
 
 /*Table structure for table `pain_inspection` */
 
@@ -123,35 +130,45 @@ CREATE TABLE `pain_inspection` (
 
 /*Data for the table `pain_inspection` */
 
+insert  into `pain_inspection`(`inspection_id`,`pain_id`,`type`) values 
+(14,1,'1'),
+(14,6,'1'),
+(14,10,'1'),
+(14,14,'1'),
+(14,11,'1'),
+(14,4,'1'),
+(14,11,'1'),
+(14,8,'1'),
+(14,10,'1'),
+(14,14,'1'),
+(16,1,'1'),
+(16,5,'1'),
+(16,10,'1'),
+(16,14,'1');
+
 /*Table structure for table `patient` */
 
 DROP TABLE IF EXISTS `patient`;
 
 CREATE TABLE `patient` (
-  `RegisterNo` varchar(10) DEFAULT NULL,
-  `Lname` varchar(30) DEFAULT NULL,
-  `Fname` varchar(30) DEFAULT NULL,
-  `Gender` varchar(1) DEFAULT NULL,
+  `id` int(20) NOT NULL AUTO_INCREMENT,
+  `RegisterNo` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `Lname` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `Fname` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `Gender` varchar(1) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
   `BirthDate` date DEFAULT NULL,
-  `Address` text,
-  `Pnumber` int(11) DEFAULT NULL,
-  `Email` varchar(30) DEFAULT NULL,
-  `comment` text,
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `RegisterNo` (`RegisterNo`)
-) ENGINE=MyISAM AUTO_INCREMENT=125 DEFAULT CHARSET=latin1;
+  `Address` varchar(250) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `Pnumber` int(10) DEFAULT NULL,
+  `Email` varchar(30) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `comment` varchar(250) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 /*Data for the table `patient` */
 
-insert  into `patient`(`RegisterNo`,`Lname`,`Fname`,`Gender`,`BirthDate`,`Address`,`Pnumber`,`Email`,`comment`,`id`) values 
-('tat','????????','123','m','2019-02-06','????',123,'ta','????',1),
-('asda','asdad','asdasd','m','2019-05-01',NULL,NULL,NULL,'test1sadasd hgh',4),
-('123asdasd','123','adasfasd','f','2019-05-01',NULL,NULL,NULL,NULL,9),
-('asdasdasd','qasdasd','dasdasdas','f','0001-01-01',NULL,NULL,NULL,NULL,8),
-('8888888888','dorj','bold','m','2019-05-01','dsjakflkjes',654648,'kljsa','restfresaf',123),
-('mn78654736','????','ijfir','f','2019-05-30',NULL,NULL,NULL,NULL,88),
-('234','???','??????','m','2019-06-01','????',312121,'????','?????????? ?????',124);
+insert  into `patient`(`id`,`RegisterNo`,`Lname`,`Fname`,`Gender`,`BirthDate`,`Address`,`Pnumber`,`Email`,`comment`) values 
+(2,'8','йыбө','йыбө','m','2019-06-01','????',454,'????','????????'),
+(123,'asdf','Батгэрэлт','йыб','m','2019-06-01','??? ???? ???? ???? ',5456465,'sdfsdfsdf',NULL);
 
 /*Table structure for table `patient_treatment` */
 
@@ -176,14 +193,18 @@ DROP TABLE IF EXISTS `schedule`;
 
 CREATE TABLE `schedule` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `date` datetime NOT NULL,
+  `date` date NOT NULL,
   `p_id` int(11) NOT NULL,
   `doctor_id` int(11) NOT NULL,
   `comment` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 /*Data for the table `schedule` */
+
+insert  into `schedule`(`id`,`date`,`p_id`,`doctor_id`,`comment`) values 
+(1,'2019-06-02',123,1,'sdfsdfsdf'),
+(2,'2019-06-01',123,1,'');
 
 /*Table structure for table `test` */
 

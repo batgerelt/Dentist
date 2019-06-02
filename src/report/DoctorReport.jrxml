@@ -47,7 +47,7 @@ ins.p_id = p.id and ins.t_id = t.id and ins.doctor_id  = u.id and
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="92" splitType="Stretch">
+		<band height="97" splitType="Stretch">
 			<rectangle>
 				<reportElement x="0" y="4" width="555" height="70" forecolor="#FCFAFA" backcolor="#3399FF" uuid="7375dcbb-86d6-414d-af35-d17012ce7520"/>
 			</rectangle>
@@ -88,12 +88,12 @@ ins.p_id = p.id and ins.t_id = t.id and ins.doctor_id  = u.id and
 		</band>
 	</title>
 	<pageHeader>
-		<band height="64" splitType="Stretch">
+		<band height="11" splitType="Stretch">
 			<rectangle>
 				<reportElement x="0" y="-13" width="555" height="20" forecolor="#FFFFFF" backcolor="#CFE4FC" uuid="ebc31717-18dc-428a-a83f-8e20e954fea0"/>
 			</rectangle>
 			<line>
-				<reportElement positionType="FixRelativeToBottom" x="-6" y="7" width="555" height="1" uuid="cc74fa4c-da84-4aed-b7cd-86b4d7c40ae4"/>
+				<reportElement positionType="FixRelativeToBottom" x="1" y="7" width="555" height="1" uuid="cc74fa4c-da84-4aed-b7cd-86b4d7c40ae4"/>
 				<graphicElement>
 					<pen lineWidth="0.5" lineColor="#999999"/>
 				</graphicElement>
@@ -123,35 +123,36 @@ ins.p_id = p.id and ins.t_id = t.id and ins.doctor_id  = u.id and
 				<text><![CDATA[Төлбөр]]></text>
 			</staticText>
 			<line>
-				<reportElement positionType="FixRelativeToBottom" x="-6" y="-13" width="555" height="1" uuid="1754748d-6654-4336-940e-6a1e8014a8ea"/>
+				<reportElement positionType="FixRelativeToBottom" x="1" y="-13" width="555" height="1" uuid="1754748d-6654-4336-940e-6a1e8014a8ea"/>
 				<graphicElement>
 					<pen lineWidth="0.5" lineColor="#999999"/>
 				</graphicElement>
 			</line>
-			<textField>
-				<reportElement x="26" y="7" width="44" height="16" uuid="51080e35-3196-4edc-9c3f-732798306b8a"/>
-				<textFieldExpression><![CDATA[$F{FName}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="70" y="7" width="46" height="16" uuid="cc38f764-5290-47bd-8e71-5c41f8831380"/>
-				<textFieldExpression><![CDATA[$F{LName}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="198" y="7" width="63" height="16" uuid="9aef310e-0eef-4e7d-be2c-dc56ad5f7ea4"/>
-				<textFieldExpression><![CDATA[$F{t_name}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="370" y="7" width="40" height="16" uuid="ffd3a7c0-47da-419e-a722-f7cfc59a0253"/>
-				<textFieldExpression><![CDATA[$F{expirydate}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="460" y="7" width="64" height="16" uuid="14da0c02-fdbc-46ef-a8f0-4d174c63056c"/>
-				<textFieldExpression><![CDATA[$F{price}]]></textFieldExpression>
-			</textField>
 		</band>
 	</pageHeader>
 	<columnHeader>
-		<band height="70" splitType="Stretch"/>
+		<band height="15" splitType="Stretch">
+			<textField>
+				<reportElement x="26" y="-2" width="44" height="16" uuid="51080e35-3196-4edc-9c3f-732798306b8a"/>
+				<textFieldExpression><![CDATA[$F{FName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="70" y="-2" width="46" height="16" uuid="cc38f764-5290-47bd-8e71-5c41f8831380"/>
+				<textFieldExpression><![CDATA[$F{LName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="198" y="-2" width="63" height="16" uuid="9aef310e-0eef-4e7d-be2c-dc56ad5f7ea4"/>
+				<textFieldExpression><![CDATA[$F{t_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="370" y="-2" width="40" height="16" uuid="ffd3a7c0-47da-419e-a722-f7cfc59a0253"/>
+				<textFieldExpression><![CDATA[$F{expirydate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="460" y="-2" width="64" height="16" uuid="14da0c02-fdbc-46ef-a8f0-4d174c63056c"/>
+				<textFieldExpression><![CDATA[$F{price}]]></textFieldExpression>
+			</textField>
+		</band>
 	</columnHeader>
 	<detail>
 		<band height="263" splitType="Stretch"/>

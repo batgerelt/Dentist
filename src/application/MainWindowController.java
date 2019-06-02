@@ -179,6 +179,10 @@ public class MainWindowController implements Initializable {
 		// TODO Auto-generated method stub		
 	}
 	
+	public String getLoggedUser() {
+		return String.valueOf(this.loggedInUser.getId());
+	}
+	
 	 public void setLoggedInUser(User loggedInUser) {
          this.loggedInUser = loggedInUser;
          ObservableList oblist =  FXCollections.observableArrayList();
@@ -187,9 +191,11 @@ public class MainWindowController implements Initializable {
         	 ConnectionClass connectionClass = new ConnectionClass();
              Connection connection = connectionClass.getConnection();
              
-             String sql ="SELECT a.isPatient, a.isSchedule, a.isInspection, a.isTreatment, a.isAccess, a.isPayment, a.isReport FROM `user` u LEFT JOIN `access` a ON u.position = a.id WHERE u.email = " + this.loggedInUser.getEmail();
+             String sql ="SELECT a.isPatient, a.isSchedule, a.isInspection, a.isTreatment, a.isAccess, a.isPayment, a.isReport, u.id "
+             		+ "FROM `user` u LEFT JOIN `access` a ON u.position = a.id WHERE u.email = '" + this.loggedInUser.getEmail() + "'";
              Statement statement = connection.createStatement();
              ResultSet resultSet = statement.executeQuery(sql);
+             
              
              while(resultSet.next()) {
             	 oblist.add(resultSet.getString("isPatient"));
@@ -199,6 +205,7 @@ public class MainWindowController implements Initializable {
             	 oblist.add(resultSet.getString("isAccess"));
             	 oblist.add(resultSet.getString("isPayment"));
             	 oblist.add(resultSet.getString("isReport"));
+            	 oblist.add(resultSet.getString("id"));
              }
              
              if(oblist.get(0).equals("0")) { patient.setDisable(true); }
@@ -208,6 +215,8 @@ public class MainWindowController implements Initializable {
              if(oblist.get(4).equals("0")) { access.setDisable(true); }
              if(oblist.get(5).equals("0")) { payment.setDisable(true); }
              if(oblist.get(6).equals("0")) { report.setDisable(true); }
+             
+             //System.out.print(oblist.get(7));
              
              
              

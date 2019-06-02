@@ -2,6 +2,7 @@ package inspection;
 
 import ModelClass.InspectionTable;
 import ModelClass.TreatmentTable;
+import application.MainWindowController;
 import connectivity.ConnectionClass;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -128,6 +129,9 @@ public class inspectionController implements Initializable {
 
     //controller 2 functions
     ObservableList<String> checkBoxList = FXCollections.observableArrayList();
+    
+    //main controlleroos doctor id avax
+    MainWindowController con = new MainWindowController();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -183,6 +187,7 @@ public class inspectionController implements Initializable {
 
         iDate.setOnAction(e->{
             cbxPatientInfo.setDisable(false);
+            clearSelect();
         });
         ins_create.setDisable(true);
         idConfirm.setDisable(true);
@@ -216,13 +221,13 @@ public class inspectionController implements Initializable {
             if(validateFields()) {
             	ConnectionClass connectionClass = new ConnectionClass();
                 Connection connection = connectionClass.getConnection();
-                String sql = "Insert into inspection(p_id,t_id,date,doctor_id,pain_now,lymph_gland_type,lips,tongue) " +
-                        "values(" + patientId[0] + ",1,'" + iDate.getValue().toString() + "',1,'" + zoviur.getText() + "','" + zoolonEd.getText() + "','" + uruul.getText() + "','" + hel.getText() + "')";
+                String sql = "Insert into inspection(p_id,date,doctor_id,pain_now,zoolon_ed,lymph_gland_type,lips,tongue) " +
+                        "values(" + patientId[0] + ",'" + iDate.getValue().toString() + "',"+Integer.valueOf(con.getLoggedUser())+",'" + zoviur.getText() + "','" + zoolonEd.getText() + "','"+tungalag.getText()+"','" + uruul.getText() + "','" + hel.getText() + "')";
                 Statement statement = connection.createStatement();
                 statement.execute(sql);
                 id = inspectionId();
                 for (int i = 0; i < checkBoxList.size(); i++) {
-                    System.out.println(checkBoxList.get(i));
+                    System.out.println("za "+checkBoxList.get(i));
                     p_id = painId(checkBoxList.get(i));
                     System.out.print(checkBoxList.get(i));
                     sql1 = "Insert into pain_inspection(inspection_id,pain_id,type) values(" + id + "," + p_id + ",'1')";
@@ -350,11 +355,13 @@ public class inspectionController implements Initializable {
         try {
         	ConnectionClass connectionClass = new ConnectionClass();
             Connection connection = connectionClass.getConnection();
-            String sql = "Select pain_now,lymph_gland_type,lips,tongue from inspection where id = "+i_id+"";
+            String sql = "Select pain_now,zoolon_ed,lymph_gland_type,lips,tongue from inspection where id = "+i_id+"";
             rs = connection.createStatement().executeQuery(sql);
             if (rs.next()) {
                 String pain_now = rs.getString("pain_now");
                 zoviur.setText(pain_now);
+                String zooloned = rs.getString("zoolon_ed");
+                zoolonEd.setText(zooloned);
                 String lymph = rs.getString("lymph_gland_type");
                 tungalag.setText(lymph);
                 String lips = rs.getString("lips");
@@ -438,7 +445,7 @@ public class inspectionController implements Initializable {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
+        System.out.println("test "+pID.get(0));
         return (String) pID.get(0);
     }
 

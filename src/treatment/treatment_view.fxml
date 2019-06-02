@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1160.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="treatment.treatmentController">
+   <children>
+      <SplitPane dividerPositions="0.32707087959009395" prefHeight="160.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <items>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="520.0" prefWidth="281.0">
+               <children>
+                  <Label layoutX="91.0" layoutY="11.0" prefHeight="31.0" prefWidth="191.0" text="Эмчлүүлэгчийн мэдээлэл" textAlignment="CENTER" wrapText="true" AnchorPane.leftAnchor="91.0" AnchorPane.rightAnchor="94.0" AnchorPane.topAnchor="11.0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <GridPane layoutX="10.0" layoutY="63.0" prefHeight="422.0" prefWidth="356.0" AnchorPane.bottomAnchor="163.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="63.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="151.33334350585938" minWidth="10.0" prefWidth="151.33334350585938" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="192.99998982747394" minWidth="10.0" prefWidth="183.999989827474" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="114.0" text="Овог :" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="87.0" text="Нэр  :" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label text="Нас :" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label text="Хүйс :" GridPane.rowIndex="5">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label text="Регистер :" GridPane.rowIndex="6">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="19.0" prefWidth="92.0" text="Төрсөн огноо :" GridPane.rowIndex="7">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label text="Утас :" GridPane.rowIndex="8">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="19.0" prefWidth="79.0" text="Гэрийн хаяг :" GridPane.rowIndex="10">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label text="Цахим шуудан :" GridPane.rowIndex="9">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="ln" disable="true" editable="false" maxWidth="150.0" minHeight="25.0" prefHeight="25.0" prefWidth="50.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="fn" disable="true" editable="false" maxWidth="150.0" minHeight="25.0" prefHeight="25.0" prefWidth="50.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="age" disable="true" editable="false" maxWidth="50.0" minHeight="25.0" prefHeight="25.0" prefWidth="50.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <TextField fx:id="gender" disable="true" editable="false" maxWidth="80.0" minHeight="25.0" prefHeight="25.0" prefWidth="50.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <TextField fx:id="register" disable="true" editable="false" maxWidth="150.0" minHeight="25.0" prefHeight="25.0" prefWidth="50.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <TextField fx:id="bDate" disable="true" editable="false" maxWidth="150.0" minHeight="25.0" prefHeight="25.0" prefWidth="50.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                        <TextField fx:id="email" disable="true" editable="false" maxWidth="150.0" minHeight="25.0" prefHeight="25.0" prefWidth="50.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                        <TextField fx:id="phoneT" disable="true" editable="false" maxWidth="150.0" minHeight="25.0" prefHeight="25.0" prefWidth="119.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                        <TextField fx:id="address" alignment="TOP_LEFT" disable="true" editable="false" maxWidth="174.0" minHeight="20.0" prefHeight="42.0" prefWidth="174.0" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                        <Label prefHeight="17.0" prefWidth="95.0" text="Өдөр сонгох:" />
+                        <DatePicker fx:id="tDate" prefHeight="25.0" prefWidth="155.0" GridPane.columnIndex="1" />
+                        <Label prefHeight="31.0" prefWidth="173.0" text="Эмчлүүлэгчийг сонгох:" GridPane.rowIndex="1" />
+                        <ComboBox fx:id="cbxPatientInfo1" disable="true" onMouseClicked="#cbxPatientInfoChoice1" prefHeight="27.0" prefWidth="161.0" promptText="Эмчлүүлэгчид" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                     </children>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <TableView fx:id="treatTable" editable="true" focusTraversable="false" layoutX="191.0" layoutY="87.0" prefHeight="245.0" prefWidth="776.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <columns>
+                        <TableColumn fx:id="treatDate" prefWidth="209.33334863185883" sortType="DESCENDING" text="Огноо" />
+                        <TableColumn fx:id="treatTeeth" prefWidth="76.66667175292969" sortable="false" text="Шүд" />
+                        <TableColumn fx:id="treat" prefWidth="281.3334045410156" sortable="false" text="Хийгдсэн эмчилгээ" />
+                        <TableColumn fx:id="treatState" prefWidth="205.333251953125" sortable="false" text="Төлөв" />
+                     </columns>
+                  </TableView>
+                  <Label layoutX="10.0" layoutY="250.0" prefHeight="31.0" prefWidth="150.0" text="Оношилгооны хэсэг" textAlignment="CENTER" wrapText="true" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="250.0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <GridPane layoutX="14.0" layoutY="280.0" prefHeight="272.0" prefWidth="429.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="280.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="211.33333333333334" minWidth="10.0" prefWidth="198.0000203450521" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="196.33331298828128" minWidth="10.0" prefWidth="129.33331298828122" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="196.33331298828128" minWidth="10.0" prefWidth="113.33335367838538" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="88.0" minHeight="10.0" prefHeight="36.666656494140625" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="92.00001017252603" minHeight="10.0" prefHeight="36.99999999999999" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="99.99997965494791" minHeight="10.0" prefHeight="32.66668701171875" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="86.66665649414062" minHeight="9.0" prefHeight="32.66666666666666" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="86.66665649414062" minHeight="5.333333333333343" prefHeight="5.333333333333343" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="171.33333333333334" minHeight="10.0" prefHeight="105.66665649414062" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="126.33332316080731" minHeight="10.0" prefHeight="35.00001017252606" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="63.0" text="Шүд : " GridPane.rowIndex="1">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label text="Хийгдсэн эмчилгээ : " GridPane.rowIndex="2">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="teeth_index" focusTraversable="false" prefHeight="25.0" prefWidth="120.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <ComboBox fx:id="cbxTreatment" focusTraversable="false" prefHeight="25.0" prefWidth="163.0" promptText="Сонгох" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label text="Төлөв : " GridPane.rowIndex="3">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label text="Огноо : ">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="cbxState" focusTraversable="false" prefHeight="25.0" prefWidth="160.0" promptText="Сонгох" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <DatePicker fx:id="completedDate" focusTraversable="false" GridPane.columnIndex="1" />
+                        <Button fx:id="tAdd" contentDisplay="TOP" focusTraversable="false" mnemonicParsing="false" onAction="#treatment_Add" prefHeight="25.0" prefWidth="64.0" style="-fx-background-image: url(&quot;\C:\Users\Lunde\IdeaProjects\DentalClinic\src\treatments.images\okBtn.png&quot;); -fx-background-repeat: no-repeat;" text="Нэмэх" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                           <GridPane.margin>
+                              <Insets left="40.0" />
+                           </GridPane.margin></Button>
+                        <TableView fx:id="treatmentsTable" prefHeight="109.0" prefWidth="211.0" GridPane.rowIndex="5" GridPane.rowSpan="2">
+                          <columns>
+                            <TableColumn fx:id="treatmentColumn" prefWidth="210.0000098546346" text="Эмчилгээнүүд" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </GridPane>
+                  <Separator layoutX="452.0" layoutY="244.0" orientation="VERTICAL" prefHeight="403.0" prefWidth="17.0" />
+                  <ImageView fitHeight="352.0" fitWidth="268.0" layoutX="483.0" layoutY="244.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="483.0" AnchorPane.rightAnchor="37.570648193359375" AnchorPane.topAnchor="244.0">
+                     <image>
+                        <Image url="@../assets/teeth.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

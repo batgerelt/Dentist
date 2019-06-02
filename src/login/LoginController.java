@@ -15,6 +15,8 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import treatment.treatmentController;
+
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -80,7 +82,7 @@ public class LoginController {
                     try {
                         loggedInUser.getUserByEmail(username.getText());
 
-                        FXMLLoader view = new FXMLLoader(getClass().getResource("../application/MainWindowFxml.fxml"));
+                        FXMLLoader view = new FXMLLoader(getClass().getResource("../application/MainWindowFxml.fxml"));                        
 
                         Parent patient = view.load();
 

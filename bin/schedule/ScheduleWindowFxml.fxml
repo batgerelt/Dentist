@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="mainContainer" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" 
+fx:controller="schedule.ScheduleContorller">
+    <top>
+        <Pane fx:id="pnlOverview" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="96.0" prefWidth="1140.0" style="-fx-background-color: #33b0b7; -fx-background-radius: 20px;" BorderPane.alignment="CENTER">
+            <children>
+                <TextField fx:id="patientName" layoutX="726.0" layoutY="37.0" prefHeight="27.0" prefWidth="183.0" promptText="Өвчтөний нэр" style="-fx-border-color: #B7C3D7;" />
+                <Label layoutX="577.0" layoutY="33.0" style="-fx-text-fill: white;" text="Өвчтөн хайх" textFill="#192b8e">
+                    <font>
+                        <Font name="Segoe UI Light" size="24.0" />
+                    </font>
+                </Label>
+                <ImageView fitHeight="17.0" fitWidth="16.0" layoutX="883.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true" translateY="3.0">
+                    <image>
+                        <Image url="@../images/icons8_Search_52px.png" />
+                    </image>
+                </ImageView>
+            <Button layoutX="917.0" layoutY="38.0" mnemonicParsing="false" onAction="#search" text="Search" />
+            </children>
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+            <BorderPane.margin>
+                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+            </BorderPane.margin>
+        </Pane>
+    </top>
+    <center>
+        <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+            <children>
+                <HBox prefHeight="100.0" prefWidth="200.0">
+                    <children>
+                        <GridPane maxWidth="950.0" minWidth="950.0" prefWidth="950.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="603.0" minWidth="10.0" prefWidth="566.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="485.0" minWidth="10.0" prefWidth="384.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <Button alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#previous" prefHeight="42.0" prefWidth="259.0" text="Өмнөх долоо хоног" textAlignment="CENTER" GridPane.halignment="CENTER">
+                                    <graphic>
+                                        <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../images/icons8_Xbox_Menu_32px.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                    <padding>
+                                        <Insets left="50.0" />
+                                    </padding>
+                                </Button>
+                                <Button alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#next" prefHeight="42.0" prefWidth="289.0" text="Дараагийн долоо хоног" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+                                    <graphic>
+                                        <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../images/icons8_Xbox_Menu_32px.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                    <padding>
+                                        <Insets left="50.0" />
+                                    </padding>
+                                </Button>
+                            </children>
+                        </GridPane>
+                    </children>
+                </HBox>
+                <GridPane>
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <Label fx:id="second" alignment="CENTER" prefHeight="62.0" prefWidth="119.0" style="-fx-background-color: #33b0b7; -fx-border-color: white; -fx-background-radius: 5px; -fx-border-radius: 5px;" text="o" textFill="WHITE" GridPane.columnIndex="2" />
+                        <Label fx:id="third" alignment="CENTER" prefHeight="62.0" prefWidth="119.0" style="-fx-background-color: #33b0b7; -fx-border-color: white; -fx-background-radius: 5px; -fx-border-radius: 5px;" text="o" textFill="WHITE" GridPane.columnIndex="3" />
+                        <Label fx:id="fourth" alignment="CENTER" prefHeight="62.0" prefWidth="119.0" style="-fx-background-color: #33b0b7; -fx-border-color: white; -fx-background-radius: 5px; -fx-border-radius: 5px;" text="t" textFill="WHITE" GridPane.columnIndex="4" />
+                        <Label fx:id="fifth" alignment="CENTER" prefHeight="62.0" prefWidth="119.0" style="-fx-background-color: #33b0b7; -fx-border-color: white; -fx-background-radius: 5px; -fx-border-radius: 5px;" text="h" textFill="WHITE" GridPane.columnIndex="5" />
+                        <Label fx:id="sixth" alignment="CENTER" prefHeight="62.0" prefWidth="119.0" style="-fx-background-color: #33b0b7; -fx-border-color: white; -fx-background-radius: 5px; -fx-border-radius: 5px;" text="m" textFill="WHITE" GridPane.columnIndex="6" />
+                        <Label fx:id="seventh" alignment="CENTER" prefHeight="62.0" prefWidth="119.0" style="-fx-background-color: #33b0b7; -fx-border-color: white; -fx-background-radius: 5px; -fx-border-radius: 5px;" text="n" textFill="WHITE" GridPane.columnIndex="7" />
+                        <Label fx:id="first" alignment="CENTER" prefHeight="62.0" prefWidth="119.0" style="-fx-background-color: #33b0b7; -fx-border-color: white; -fx-background-radius: 5px; -fx-border-radius: 5px;" text="t" textFill="WHITE" GridPane.columnIndex="1" />
+                    </children>
+                </GridPane>
+                <HBox maxHeight="600.0" maxWidth="950.0" minHeight="405.0" minWidth="950.0" prefHeight="490.0" prefWidth="950.0" style="-fx-background-color: #303EB5; -fx-background-radius: 20px;">
+                    <children>
+                        <GridPane maxHeight="480.0" minHeight="480.0" prefHeight="480.0" prefWidth="110.0" style="-fx-background-color: transparent;">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints maxHeight="115.9999755859375" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                                <RowConstraints maxHeight="59.79999389648438" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <Label alignment="CENTER_RIGHT" prefHeight="46.0" prefWidth="181.0" text="8:00 - 09:00" textFill="WHITE">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Label>
+                                <Label alignment="CENTER_RIGHT" prefHeight="46.0" prefWidth="133.0" text="14:00 - 15:00" textFill="WHITE" GridPane.rowIndex="6">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Label>
+                                <Label alignment="CENTER_RIGHT" prefHeight="46.0" prefWidth="156.0" text="13:00 - 14:00" textFill="WHITE" GridPane.rowIndex="5">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Label>
+                                <Label alignment="CENTER_RIGHT" prefHeight="46.0" prefWidth="145.0" text="12:00 - 13:00" textFill="WHITE" GridPane.rowIndex="4">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Label>
+                                <Label alignment="CENTER_RIGHT" prefHeight="46.0" prefWidth="133.0" text="11:00 - 12:00" textFill="WHITE" GridPane.rowIndex="3">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Label>
+                                <Label alignment="CENTER_RIGHT" prefHeight="46.0" prefWidth="145.0" text="10:00 - 11:00" textFill="WHITE" GridPane.rowIndex="2">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Label>
+                                <Label alignment="CENTER_RIGHT" prefHeight="46.0" prefWidth="135.0" text="9:00 - 10:00" textFill="WHITE" GridPane.rowIndex="1">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Label>
+                                <Label alignment="CENTER_RIGHT" prefHeight="46.0" prefWidth="131.0" text="18:00 - 19:00" textFill="WHITE" GridPane.rowIndex="10">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Label>
+                                <Label alignment="CENTER_RIGHT" prefHeight="46.0" prefWidth="149.0" text="16:00 - 17:00" textFill="WHITE" GridPane.rowIndex="8">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Label>
+                                <Label alignment="CENTER_RIGHT" prefHeight="46.0" prefWidth="164.0" text="15:00 - 16:00" textFill="WHITE" GridPane.rowIndex="7">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Label>
+                                <Label alignment="CENTER_RIGHT" prefHeight="46.0" prefWidth="133.0" text="19:00 - 20:00" textFill="WHITE" GridPane.rowIndex="11">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Label>
+                                <Label alignment="CENTER_RIGHT" prefHeight="46.0" prefWidth="149.0" text="17:00 - 18:00" textFill="WHITE" GridPane.rowIndex="9">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                            <padding>
+                                <Insets right="5.0" />
+                            </padding>
+                            <HBox.margin>
+                                <Insets bottom="20.0" />
+                            </HBox.margin>
+                        </GridPane>
+                        <TableView fx:id="scheduleTableViewId" onMouseClicked="#getCell" prefHeight="503.0" prefWidth="840.0" styleClass="table-row-cell">
+                            <columns>
+                                <TableColumn fx:id="monday" prefWidth="120.0" />
+                                <TableColumn fx:id="tuesday" prefWidth="120.0" />
+                                <TableColumn fx:id="wednesday" prefWidth="120.0" />
+                                <TableColumn fx:id="thursday" prefWidth="120.0" />
+                                <TableColumn fx:id="friday" prefWidth="120.0" />
+                                <TableColumn fx:id="saturday" prefWidth="120.0" />
+                                <TableColumn fx:id="sunday" prefWidth="120.0" />
+                            </columns>
+                        </TableView>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </center>
+   <left>
+      <Pane prefHeight="575.0" prefWidth="177.0" style="-fx-border-color: #36969b; -fx-border-radius: 20;" BorderPane.alignment="CENTER">
+         <children>
+            <ChoiceBox fx:id="Button_patient" layoutX="14.0" layoutY="241.0" onMouseClicked="#uvchtun_songoh" prefWidth="150.0" />
+            <ChoiceBox fx:id="Button_doctor" layoutX="14.0" layoutY="323.0" onMouseClicked="#emch_songoh" prefWidth="150.0" />
+            <DatePicker fx:id="Choice_date" layoutX="13.0" layoutY="165.0" onAction="#udur_songoh" prefHeight="25.0" prefWidth="151.0" />
+            <Label layoutX="16.0" layoutY="24.0" prefHeight="27.0" prefWidth="137.0" style="-fx-font-size: 18; -fx-background-color: #33b0b7; -fx-border-radius: 20;" text="  Хуваарь олгох" textFill="WHITE" />
+            <Label layoutX="23.0" layoutY="211.0" text="Эмчлүүлэгч сонгох">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="23.0" layoutY="292.0" text="Эмч сонгох">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="Button_cancel" layoutX="23.0" layoutY="558.0" mnemonicParsing="false" onAction="#Cancel" text="Cancel" />
+            <Button fx:id="Button_done" layoutX="103.0" layoutY="558.0" mnemonicParsing="false" onAction="#Done" prefHeight="25.0" prefWidth="56.0" text="Done" />
+            <Label layoutX="23.0" layoutY="133.0" text="Өдөр сонгох">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </left>
+</BorderPane>
