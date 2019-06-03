@@ -2,17 +2,17 @@
 <!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="DoctorReport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e004766e-84c0-4821-bd18-b3f404726973">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapter1.xml"/>
 	<parameter name="doctorID" class="java.lang.String"/>
 	<parameter name="END_DATE" class="java.util.Date"/>
 	<parameter name="START_DATE" class="java.util.Date"/>
 	<queryString language="SQL">
 		<![CDATA[SELECT p.FName, p.LName , pt.expirydate, t.price, t.t_name, u.lname, u.id
-FROM inspection ins, patient p, patient_treatment pt, treatment t, user u 
+FROM  patient p, patient_treatment pt, treatment t, user u 
 WHERE 
-ins.p_id = p.id and ins.t_id = t.id and ins.doctor_id  = u.id and
+pt.doctor_id=u.id and pt.patient_id=p.id and pt.treatment_id=t.id and
 	 pt.`expirydate` BETWEEN $P{START_DATE} AND $P{END_DATE} and 
-	 ins.p_id = pt.patient_id and u.lname=$P{doctorID}]]>
+	  u.lname=$P{doctorID}]]>
 	</queryString>
 	<field name="FName" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="FName"/>
@@ -43,11 +43,14 @@ ins.p_id = p.id and ins.t_id = t.id and ins.doctor_id  = u.id and
 		<property name="com.jaspersoft.studio.field.tree.path" value="user"/>
 	</field>
 	<variable name="Niit_orlogo" class="java.lang.Integer" calculation="Sum"/>
+	<variable name="price1" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{price}]]></variableExpression>
+	</variable>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="97" splitType="Stretch">
+		<band height="87" splitType="Stretch">
 			<rectangle>
 				<reportElement x="0" y="4" width="555" height="70" forecolor="#FCFAFA" backcolor="#3399FF" uuid="7375dcbb-86d6-414d-af35-d17012ce7520"/>
 			</rectangle>
@@ -82,24 +85,24 @@ ins.p_id = p.id and ins.t_id = t.id and ins.doctor_id  = u.id and
 				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="103" y="60" width="77" height="7" uuid="aa439725-8766-4d98-af6d-37e78664eab4"/>
+				<reportElement x="90" y="54" width="60" height="19" uuid="bbf4dc7a-4ad5-42b7-b4f4-8bc1dc834d67"/>
 				<textFieldExpression><![CDATA[$F{lname}]]></textFieldExpression>
 			</textField>
 		</band>
 	</title>
-	<pageHeader>
-		<band height="11" splitType="Stretch">
+	<columnHeader>
+		<band height="13" splitType="Stretch">
 			<rectangle>
-				<reportElement x="0" y="-13" width="555" height="20" forecolor="#FFFFFF" backcolor="#CFE4FC" uuid="ebc31717-18dc-428a-a83f-8e20e954fea0"/>
+				<reportElement x="0" y="-14" width="555" height="20" forecolor="#FFFFFF" backcolor="#CFE4FC" uuid="ebc31717-18dc-428a-a83f-8e20e954fea0"/>
 			</rectangle>
 			<line>
-				<reportElement positionType="FixRelativeToBottom" x="1" y="7" width="555" height="1" uuid="cc74fa4c-da84-4aed-b7cd-86b4d7c40ae4"/>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="7" width="555" height="1" uuid="cc74fa4c-da84-4aed-b7cd-86b4d7c40ae4"/>
 				<graphicElement>
 					<pen lineWidth="0.5" lineColor="#999999"/>
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement x="17" y="-10" width="100" height="15" uuid="354c28fe-a84b-45fd-8750-881a268b9670">
+				<reportElement x="30" y="-10" width="100" height="15" uuid="354c28fe-a84b-45fd-8750-881a268b9670">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5fc078eb-d730-4f1f-9016-c02113c238c7"/>
 				</reportElement>
 				<text><![CDATA[Үйлчлүүлэгчийн нэр]]></text>
@@ -111,7 +114,7 @@ ins.p_id = p.id and ins.t_id = t.id and ins.doctor_id  = u.id and
 				<text><![CDATA[Оношилгоо]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="367" y="-10" width="69" height="15" uuid="597c2e33-3d2e-409c-9a86-61308e36f3f2">
+				<reportElement x="368" y="-10" width="69" height="15" uuid="597c2e33-3d2e-409c-9a86-61308e36f3f2">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2d468631-816d-426e-ba2f-1bef207e0810"/>
 				</reportElement>
 				<text><![CDATA[Огноо]]></text>
@@ -122,40 +125,47 @@ ins.p_id = p.id and ins.t_id = t.id and ins.doctor_id  = u.id and
 				</reportElement>
 				<text><![CDATA[Төлбөр]]></text>
 			</staticText>
+			<staticText>
+				<reportElement x="8" y="-10" width="25" height="15" uuid="bec58524-7027-4fdf-9479-0e8a54663cb4">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="85b940e9-81f2-4de6-9766-4a6152ff83f4"/>
+				</reportElement>
+				<text><![CDATA[No]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="17" splitType="Stretch">
+			<textField>
+				<reportElement x="31" y="-4" width="64" height="16" uuid="51080e35-3196-4edc-9c3f-732798306b8a"/>
+				<textFieldExpression><![CDATA[$F{FName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="-4" width="74" height="16" uuid="cc38f764-5290-47bd-8e71-5c41f8831380"/>
+				<textFieldExpression><![CDATA[$F{LName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="195" y="-4" width="165" height="16" uuid="9aef310e-0eef-4e7d-be2c-dc56ad5f7ea4"/>
+				<textFieldExpression><![CDATA[$F{t_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="370" y="-4" width="40" height="16" uuid="ffd3a7c0-47da-419e-a722-f7cfc59a0253"/>
+				<textFieldExpression><![CDATA[$F{expirydate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="460" y="-4" width="85" height="16" uuid="14da0c02-fdbc-46ef-a8f0-4d174c63056c"/>
+				<textFieldExpression><![CDATA[$F{price}]]></textFieldExpression>
+			</textField>
 			<line>
-				<reportElement positionType="FixRelativeToBottom" x="1" y="-13" width="555" height="1" uuid="1754748d-6654-4336-940e-6a1e8014a8ea"/>
+				<reportElement positionType="FixRelativeToBottom" x="1" y="10" width="555" height="1" uuid="1754748d-6654-4336-940e-6a1e8014a8ea"/>
 				<graphicElement>
 					<pen lineWidth="0.5" lineColor="#999999"/>
 				</graphicElement>
 			</line>
-		</band>
-	</pageHeader>
-	<columnHeader>
-		<band height="15" splitType="Stretch">
 			<textField>
-				<reportElement x="26" y="-2" width="44" height="16" uuid="51080e35-3196-4edc-9c3f-732798306b8a"/>
-				<textFieldExpression><![CDATA[$F{FName}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="70" y="-2" width="46" height="16" uuid="cc38f764-5290-47bd-8e71-5c41f8831380"/>
-				<textFieldExpression><![CDATA[$F{LName}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="198" y="-2" width="63" height="16" uuid="9aef310e-0eef-4e7d-be2c-dc56ad5f7ea4"/>
-				<textFieldExpression><![CDATA[$F{t_name}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="370" y="-2" width="40" height="16" uuid="ffd3a7c0-47da-419e-a722-f7cfc59a0253"/>
-				<textFieldExpression><![CDATA[$F{expirydate}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="460" y="-2" width="64" height="16" uuid="14da0c02-fdbc-46ef-a8f0-4d174c63056c"/>
-				<textFieldExpression><![CDATA[$F{price}]]></textFieldExpression>
+				<reportElement x="8" y="-4" width="24" height="16" uuid="7473831b-d6cc-449d-94e9-ab24b676b175"/>
+				<textFieldExpression><![CDATA[$V{COLUMN_COUNT}]]></textFieldExpression>
 			</textField>
 		</band>
-	</columnHeader>
-	<detail>
-		<band height="263" splitType="Stretch"/>
 	</detail>
 	<columnFooter>
 		<band height="45" splitType="Stretch"/>
@@ -164,6 +174,31 @@ ins.p_id = p.id and ins.t_id = t.id and ins.doctor_id  = u.id and
 		<band height="54" splitType="Stretch"/>
 	</pageFooter>
 	<summary>
-		<band height="56" splitType="Stretch"/>
+		<band height="82" splitType="Stretch">
+			<textField>
+				<reportElement x="442" y="23" width="100" height="15" uuid="9f893be8-6bdf-473b-958a-0e2805544156"/>
+				<textFieldExpression><![CDATA[$V{price1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="380" y="23" width="63" height="15" uuid="d8a26677-5bdd-48ad-b2a2-28999cf4015a"/>
+				<text><![CDATA[Нийт орлого:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="23" width="44" height="15" uuid="50696d9f-b6a5-40dd-8e4f-415dae5c4bb6"/>
+				<text><![CDATA[Огноо:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="61" y="23" width="42" height="15" uuid="cefb91c8-cd28-4ed5-a3a7-7ecd551fa586"/>
+				<textFieldExpression><![CDATA[$P{START_DATE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="23" width="44" height="15" uuid="fbab602b-274f-4bdb-8d30-7a960da6c5d8"/>
+				<textFieldExpression><![CDATA[$P{END_DATE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="102" y="23" width="8" height="15" uuid="d1dceed5-6f8a-4a67-8a12-4a0b16f21451"/>
+				<text><![CDATA[-]]></text>
+			</staticText>
+		</band>
 	</summary>
 </jasperReport>
