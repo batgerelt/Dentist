@@ -261,7 +261,7 @@ insert  into `user`(`id`,`lname`,`fname`,`dob`,`position`,`email`,`password`,`ad
 (1,'Battur','boldoo','1997-05-06',2,'123','asdf','asdassfafhfjdfetgdfxvcx',9934744,'m','ta98011719'),
 (3,'Nomin','Nomin','2019-05-27',1,'Nomin','asdf','',0,'f',''),
 (4,'ASD','ASF','2019-06-01',2,'asdf','asdf','ASDF',234234,'m','ASDF'),
-(5,'????','????','2019-06-01',2,'1234',NULL,'????',99394774,'m','24234234');
+(5,'???','????','2019-06-01',2,'1234',NULL,'????',99394774,'m','24234234');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
